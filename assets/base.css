@@ -4208,3 +4208,190 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* Header banding fix */
+.announcement-bar, #shopify-section-announcement-bar {
+  display: block !important;
+  width: 100% !important;
+  background: #10B981 !important;
+  color: #0D1117 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  padding: 10px 20px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+header, .header, #shopify-section-header {
+  background: #1C2333 !important;
+  margin: 0 !important;
+  padding: 16px 40px !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2) !important;
+  border-top: 0 !important;
+}
+
+.header__inline-menu, nav, .header__menu-item {
+  background: #1C2333 !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.1) !important;
+  padding: 12px 0 !important;
+  margin: 0 !important;
+}
+
+/* Homepage fixed sections */
+.image-banner {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1C2333 0%, #162032 50%, #0F2744 100%);
+}
+
+.image-banner .banner__heading {
+  font-family: 'Syne', sans-serif !important;
+  font-size: 64px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  line-height: 1.1 !important;
+  margin-bottom: 16px !important;
+}
+
+.image-banner .banner__text p {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 17px !important;
+  color: #94A3B8 !important;
+  max-width: 520px !important;
+  margin: 0 auto 32px !important;
+}
+
+.image-banner .banner__buttons {
+  display: flex !important;
+  gap: 14px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+.image-banner .button, .image-banner button, .banner__buttons .button {
+  background: #10B981 !important;
+  color: #0D1117 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  padding: 14px 32px !important;
+  border-radius: 6px !important;
+  border: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.image-banner .button:hover, .image-banner button:hover, .banner__buttons .button:hover {
+  background: #059669 !important;
+  transform: scale(1.02) !important;
+}
+
+.image-banner .button--secondary, .banner__buttons .button--secondary {
+  background: transparent !important;
+  color: #10B981 !important;
+  border: 1.5px solid #10B981 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  padding: 14px 32px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.image-banner .button--secondary:hover, .banner__buttons .button--secondary:hover {
+  background: #10B981 !important;
+  color: #0D1117 !important;
+}
+
+.card__inner {
+  background: #1C2333 !important;
+  border: 1px solid rgba(16, 185, 129, 0.15) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+.card__inner:hover {
+  border-color: #10B981 !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.12) !important;
+}
+
+.card__heading, .card__heading * {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 14px !important;
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
+}
+
+.price__regular .price-item--regular {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 16px !important;
+  color: #10B981 !important;
+  font-weight: 700 !important;
+}
+
+.quick-add__submit {
+  background: #10B981 !important;
+  color: #0D1117 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border-radius: 6px !important;
+  border: 0 !important;
+  width: 100% !important;
+  padding: 10px !important;
+  cursor: pointer !important;
+}
+
+.quick-add__submit:hover {
+  background: #059669 !important;
+}
+
+.duab-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 80px 40px;
+  background: #162032;
+}
+
+.benefit-card {
+  background: #1C2333;
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.benefit-card span {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.benefit-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.benefit-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #94A3B8;
+  margin: 0;
+}
