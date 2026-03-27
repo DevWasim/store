@@ -1,0 +1,294 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "hero_about": {
+      "type": "section",
+      "blocks": {
+        "heading_about": {
+          "type": "text",
+          "name": "Heading",
+          "settings": {
+            "text": "<h1>Our Mission</h1>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h1",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_about": {
+          "type": "text",
+          "name": "Mission Statement",
+          "settings": {
+            "text": "<p>We believe every man deserves access to safe, effective, and discreet sexual wellness solutions. Our mission is to break the stigma around men's sexual health by providing clinically tested products that deliver real results, backed by science and wrapped in complete discretion.</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1.125rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_about",
+        "text_about"
+      ],
+      "name": "About Hero",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 20,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 60,
+        "padding-block-end": 40
+      }
+    },
+    "values_section": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<div class=\"wellness-about__values wellness-container\"><div class=\"wellness-about__value-card\"><div style=\"font-size: 32px; margin-bottom: 8px;\">🔬</div><h3>Science First</h3><p>Every product is formulated with clinically proven ingredients and undergoes rigorous testing before reaching our customers.</p></div><div class=\"wellness-about__value-card\"><div style=\"font-size: 32px; margin-bottom: 8px;\">🔒</div><h3>Complete Privacy</h3><p>From plain packaging to discreet billing, we protect your privacy at every step of the purchasing journey.</p></div><div class=\"wellness-about__value-card\"><div style=\"font-size: 32px; margin-bottom: 8px;\">✅</div><h3>Proven Efficacy</h3><p>We only offer products that deliver measurable results. If it doesn't work, we don't sell it. Backed by our 30-day guarantee.</p></div></div>",
+        "color_scheme": "scheme-2",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
+    "story_section": {
+      "type": "section",
+      "blocks": {
+        "story_heading": {
+          "type": "text",
+          "name": "Story Heading",
+          "settings": {
+            "text": "<h2>Our Story</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h3",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "story_text": {
+          "type": "text",
+          "name": "Story Text",
+          "settings": {
+            "text": "<p>Founded with a simple belief that men's sexual wellness doesn't have to be complicated, embarrassing, or ineffective. Our founders experienced firsthand the frustration of navigating a marketplace filled with unverified claims and questionable products.</p><p>That's why we partnered with researchers and dermatologists to develop Metro — a topical performance enhancement cream that actually delivers. Our flagship product provides up to six hours of enhanced confidence, absorbed in minutes, with no systemic side effects.</p><p>Today, we're proud to serve thousands of satisfied customers across Pakistan, helping men reclaim their confidence with science-backed solutions and industry-leading discretion.</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "story_heading",
+        "story_text"
+      ],
+      "name": "Our Story",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "quality_section": {
+      "type": "section",
+      "blocks": {
+        "quality_heading": {
+          "type": "text",
+          "name": "Quality Heading",
+          "settings": {
+            "text": "<h2>Quality Assurance</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h3",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "quality_text": {
+          "type": "text",
+          "name": "Quality Text",
+          "settings": {
+            "text": "<p>Every product in our range undergoes a multi-stage quality assurance process. From raw ingredient sourcing to final packaging, we maintain strict controls to ensure consistency, purity, and potency. Our formulations are tested by independent laboratories and reviewed by board-certified dermatologists before they ever reach our customers.</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "quality_heading",
+        "quality_text"
+      ],
+      "name": "Quality Assurance",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-3",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    }
+  },
+  "order": [
+    "hero_about",
+    "values_section",
+    "story_section",
+    "quality_section"
+  ]
+}

@@ -1,0 +1,112 @@
+<section id="wellness-trust" class="wellness-trust" aria-label="Trust & Guarantee Badges">
+  <div class="wellness-trust__heading">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+
+  <div class="wellness-trust__grid">
+    {%- for block in section.blocks -%}
+      <div class="wellness-trust__badge" {{ block.shopify_attributes }}>
+        <div class="wellness-trust__badge-icon">
+          {%- if block.settings.icon == 'clinical' -%}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          {%- elsif block.settings.icon == 'doctor' -%}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+          {%- elsif block.settings.icon == 'shipping' -%}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25m-2.25 0h-2.25m0 0V5.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v12.375m-9-.75V5.625m0 12v.008c0 .414-.336.75-.75.75h-.008a.75.75 0 01-.75-.75v-.008c0-.414.336-.75.75-.75h.008c.414 0 .75.336.75.75z"/></svg>
+          {%- elsif block.settings.icon == 'guarantee' -%}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+          {%- endif -%}
+        </div>
+        <div class="wellness-trust__badge-title">{{ block.settings.title }}</div>
+        <p class="wellness-trust__badge-text">{{ block.settings.description }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Wellness Trust Badges",
+  "tag": "section",
+  "class": "wellness-trust-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Confidence, Our Commitment"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "clinical", "label": "Clinical Testing" },
+            { "value": "doctor", "label": "Dermatologist" },
+            { "value": "shipping", "label": "Discreet Shipping" },
+            { "value": "guarantee", "label": "Money-Back Guarantee" }
+          ],
+          "default": "clinical"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Trust Badge"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "A brief description of this trust signal."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wellness Trust Badges",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "clinical",
+            "title": "Clinically Tested",
+            "description": "All products undergo rigorous clinical testing to ensure safety and efficacy."
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "doctor",
+            "title": "Dermatologist Recommended",
+            "description": "Formulated and recommended by board-certified dermatologists."
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "shipping",
+            "title": "Discreet Shipping",
+            "description": "Plain, unmarked packaging with no indication of contents."
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "guarantee",
+            "title": "30-Day Money-Back Guarantee",
+            "description": "Not satisfied? Get a full refund within 30 days, no questions asked."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
