@@ -154,7 +154,7 @@
               "type": "_divider",
               "name": "t:names.divider",
               "settings": {
-                "thickness": 1,
+                "thickness": 0,
                 "corner_radius": "square",
                 "width_percent": 100,
                 "padding-block-start": 0,
@@ -212,7 +212,7 @@
             "trust_badges_inline": {
               "type": "custom-liquid",
               "settings": {
-                "liquid": "<div style=\"display:flex; justify-content:space-between; margin-top:20px; border-top:1px solid rgba(201,168,76,0.3); padding-top:24px;\"><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" style=\"color:#C9A84C; margin:0 auto;\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\"></path></svg><div style=\"font-size:10px; margin-top:8px; color:#fff; text-transform:uppercase; letter-spacing:0.5px;\">Discreet<br>Packaging</div></div><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" style=\"color:#C9A84C; margin:0 auto;\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 6v6l4 2\"></path></svg><div style=\"font-size:10px; margin-top:8px; color:#fff; text-transform:uppercase; letter-spacing:0.5px;\">6 Hour<br>Effect</div></div><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" style=\"color:#C9A84C; margin:0 auto;\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\"></path></svg><div style=\"font-size:10px; margin-top:8px; color:#fff; text-transform:uppercase; letter-spacing:0.5px;\">Clinically<br>Tested</div></div><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" style=\"color:#C9A84C; margin:0 auto;\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15\"></path></svg><div style=\"font-size:10px; margin-top:8px; color:#fff; text-transform:uppercase; letter-spacing:0.5px;\">Free<br>Returns</div></div></div>",
+                "liquid": "<div class=\"inline-trust-badges\"><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\"></path></svg><div class=\"label\">Discreet<br>Packaging</div></div><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 6v6l4 2\"></path></svg><div class=\"label\">6-Hour<br>Effect</div></div><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z\"></path></svg><div class=\"label\">Lab<br>Tested</div></div><div style=\"text-align:center;\"><svg width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15\"></path></svg><div class=\"label\">Free<br>Returns</div></div></div>",
                 "color_scheme": "",
                 "padding-block-start": 0,
                 "padding-block-end": 16
@@ -461,9 +461,9 @@
         "icons_shape": "none",
         "section_width": "page-width",
         "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "color_scheme": "scheme-2",
+        "padding-block-start": 60,
+        "padding-block-end": 60
       }
     }
   },

@@ -19,11 +19,11 @@
           "settings": {
             "text": "Free Discreet Shipping Over Rs. 5,000 — 30-Day Money-Back Guarantee",
             "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
+            "font": "var(--font-body--family)",
+            "font_size": "0.8125rem",
             "weight": "700",
             "letter_spacing": "normal",
-            "case": "uppercase"
+            "case": "none"
           },
           "blocks": {}
         }
