@@ -1,0 +1,65 @@
+<section id="duab-products" class="duab-products" aria-label="Featured Products">
+  <div class="duab-products__header">
+    <span class="duab-products__label">Featured Products</span>
+    <h2 class="duab-products__title">Our Best Sellers</h2>
+    <span class="duab-products__accent"></span>
+  </div>
+
+  <div class="duab-products__grid">
+    {%- for product in collections.all.products limit: 6 -%}
+      <div class="duab-products__card">
+        {%- if product.available == false -%}
+          <span class="duab-products__sold-out">SOLD OUT</span>
+        {%- endif -%}
+
+        <a href="{{ product.url }}">
+          {%- if product.featured_image -%}
+            {{ product.featured_image | image_url: width: 600, height: 600, crop: 'center' | image_tag: class: 'duab-products__card-img', loading: 'lazy', alt: product.title }}
+          {%- else -%}
+            <div class="duab-products__card-placeholder">{{ product.title }}</div>
+          {%- endif -%}
+        </a>
+
+        <div class="duab-products__card-body">
+          <a href="{{ product.url }}" class="duab-products__card-name">{{ product.title }}</a>
+          <div class="duab-products__card-price">
+            {{ product.price | money }}
+            {%- if product.compare_at_price > product.price -%}
+              <span class="duab-products__card-compare">{{ product.compare_at_price | money }}</span>
+            {%- endif -%}
+          </div>
+          {%- if product.available -%}
+            <a href="{{ product.url }}" class="duab-products__atc">Shop Now</a>
+          {%- else -%}
+            <span class="duab-products__atc" style="opacity: 0.5; cursor: not-allowed;">Sold Out</span>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- else -%}
+      {%- for i in (1..3) -%}
+        <div class="duab-products__card">
+          <div class="duab-products__card-placeholder">Product {{ i }}</div>
+          <div class="duab-products__card-body">
+            <span class="duab-products__card-name">Sample Product {{ i }}</span>
+            <div class="duab-products__card-price">Rs. 2,999</div>
+            <span class="duab-products__atc">Shop Now</span>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DUAB Featured Products",
+  "tag": "section",
+  "class": "duab-products-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "DUAB Featured Products"
+    }
+  ]
+}
+{% endschema %}

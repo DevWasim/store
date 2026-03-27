@@ -186,16 +186,15 @@
   {% elsif product == blank %}
     {% liquid
       capture placeholder_image
-        echo '<img src="https://source.unsplash.com/600x700/?cream,product,luxury,men,cosmetic" alt="Metro Man Power Cream" class="product-media-container" width="600" height="700" loading="lazy" style="object-fit:cover;width:100%;height:100%;">'
+        echo '<div class="product-media-container" style="background:linear-gradient(135deg,#162032,#0F2744);width:100%;height:100%;display:flex;align-items:center;justify-content:center;">'
+        echo '<span style="color:#10B981;font-family:Syne,sans-serif;font-size:14px;">Product</span>'
+        echo '</div>'
       endcapture
       capture placeholder_slide
         render 'slideshow-slide', index: 1, children: placeholder_image, class: 'product-media-container card-gallery__placeholder'
       endcapture
       render 'slideshow', ref: 'slideshow', slides: placeholder_slide, slide_count: 1, attributes: 'disabled="true"'
     %}
-    {% comment %}
-      Prompt: premium men's cream product tube in dark navy background, studio product photography, green accent lighting, luxury cosmetic product shoot, sharp focus
-    {% endcomment %}
   {%- endif -%}
   {{ children }}
 </div>

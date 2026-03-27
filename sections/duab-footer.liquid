@@ -1,0 +1,43 @@
+<section id="duab-footer" class="duab-footer" aria-label="Footer">
+  <div class="duab-footer__grid">
+    <div class="duab-footer__col">
+      <div class="duab-footer__logo">DUAB</div>
+      <div class="duab-footer__tagline">Performance. Privacy. Power.</div>
+    </div>
+    <div class="duab-footer__col">
+      <div class="duab-footer__heading">Quick Links</div>
+      <div class="duab-footer__links">
+        <a href="/">Home</a>
+        <a href="/collections/all">Catalog</a>
+        <a href="/pages/about">About</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/policies/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="duab-footer__col">
+      <div class="duab-footer__heading">Stay Updated</div>
+      {%- form 'customer', id: 'duab-footer-newsletter' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" class="duab-footer__input" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="duab-footer__subscribe">Subscribe</button>
+      {%- endform -%}
+    </div>
+  </div>
+  <div class="duab-footer__bottom">
+    © 2025 DUAB. All rights reserved. Discreet billing and shipping guaranteed.
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DUAB Footer",
+  "tag": "section",
+  "class": "duab-footer-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "DUAB Footer"
+    }
+  ]
+}
+{% endschema %}

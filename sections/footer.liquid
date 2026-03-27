@@ -3,12 +3,7 @@
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
   class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
-  style="position: relative; overflow: hidden;"
 >
-  {% comment %}
-    Prompt: dark city skyline silhouette at night, 1920x400 texture, subtle dark blue grey, minimal opacity, professional corporate background
-  {% endcomment %}
-  <img src="https://source.unsplash.com/1920x400/?city,skyline,dark,night" alt="City Background" class="footer__bg-img" loading="lazy">
   {% liquid
     assign total_blocks = section.blocks.size
 

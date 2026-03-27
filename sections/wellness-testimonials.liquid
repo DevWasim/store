@@ -1,126 +1,38 @@
-<section id="wellness-testimonials" class="wellness-testimonials" aria-label="Customer Testimonials" style="position: relative; overflow: hidden;">
-  {% comment %}
-    Prompt: dark carbon fiber texture, luxury dark background, subtle pattern, deep charcoal
-  {% endcomment %}
-  <img src="https://source.unsplash.com/1920x600/?dark,texture,carbon,luxury" alt="Texture Background" class="wellness-testimonials__bg" loading="lazy">
-  <div class="wellness-testimonials__heading" style="position: relative; z-index: 1;">
-    <h2>{{ section.settings.heading }}</h2>
-    {%- if section.settings.subheading != blank -%}
-      <p>{{ section.settings.subheading }}</p>
-    {%- endif -%}
+<section id="duab-testimonials" class="duab-testimonials" aria-label="Customer Testimonials">
+  <div class="duab-testimonials__header">
+    <span class="duab-testimonials__label">Real Results</span>
+    <h2 class="duab-testimonials__title">What Our Customers Say</h2>
+    <span class="duab-testimonials__accent"></span>
   </div>
 
-  <div class="wellness-testimonials__grid" style="position: relative; z-index: 1;">
-    {%- for block in section.blocks -%}
-      <div class="wellness-testimonials__card" {{ block.shopify_attributes }}>
-        <div class="wellness-testimonials__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
-          {%- assign full_stars = block.settings.rating | floor -%}
-          {%- for i in (1..5) -%}
-            {%- if i <= full_stars -%}
-              <span class="wellness-testimonials__star" aria-hidden="true">★</span>
-            {%- else -%}
-              <span class="wellness-testimonials__star" style="opacity: 0.3;" aria-hidden="true">★</span>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
-        <blockquote class="wellness-testimonials__quote">
-          "{{ block.settings.quote }}"
-        </blockquote>
-        <div class="wellness-testimonials__author">{{ block.settings.author }}</div>
-        {%- if block.settings.verified -%}
-          <div class="wellness-testimonials__verified">✓ Verified Purchase</div>
-        {%- endif -%}
-      </div>
-    {%- endfor -%}
+  <div class="duab-testimonials__grid">
+    <div class="duab-testimonials__card">
+      <div class="duab-testimonials__stars">★★★★★</div>
+      <div class="duab-testimonials__quote">"Metro cream changed everything. Works exactly as described, fast and lasts all night. Discreet packaging too."</div>
+      <div class="duab-testimonials__reviewer">Ahmed K. — Karachi</div>
+    </div>
+    <div class="duab-testimonials__card">
+      <div class="duab-testimonials__stars">★★★★★</div>
+      <div class="duab-testimonials__quote">"Finally a product that actually works. I was skeptical but after the first use I ordered 3 more. Highly recommend."</div>
+      <div class="duab-testimonials__reviewer">Usman R. — Lahore</div>
+    </div>
+    <div class="duab-testimonials__card">
+      <div class="duab-testimonials__stars">★★★★★</div>
+      <div class="duab-testimonials__quote">"Delivery was fast and private. The product works great and the 6 hour claim is real. Very satisfied customer."</div>
+      <div class="duab-testimonials__reviewer">Bilal M. — Islamabad</div>
+    </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Wellness Testimonials",
+  "name": "DUAB Testimonials",
   "tag": "section",
-  "class": "wellness-testimonials-section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "What Our Customers Say"
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Real results from real customers"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "testimonial",
-      "name": "Testimonial",
-      "settings": [
-        {
-          "type": "range",
-          "id": "rating",
-          "label": "Star Rating",
-          "min": 1,
-          "max": 5,
-          "step": 1,
-          "default": 5
-        },
-        {
-          "type": "textarea",
-          "id": "quote",
-          "label": "Quote",
-          "default": "This product has genuinely transformed my confidence. The results were noticeable within the first use."
-        },
-        {
-          "type": "text",
-          "id": "author",
-          "label": "Author Name",
-          "default": "Satisfied Customer"
-        },
-        {
-          "type": "checkbox",
-          "id": "verified",
-          "label": "Verified Purchase",
-          "default": true
-        }
-      ]
-    }
-  ],
+  "class": "duab-testimonials-section",
+  "settings": [],
   "presets": [
     {
-      "name": "Wellness Testimonials",
-      "blocks": [
-        {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "I was skeptical at first, but Metro cream delivered exactly as promised. Fast acting and the effects lasted hours. The discreet packaging was a nice touch too.",
-            "author": "Ahmed R.",
-            "verified": true
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Outstanding product and excellent customer service. I had questions about the application process and the team responded within hours. Highly recommend.",
-            "author": "Kamran S.",
-            "verified": true
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "After trying several products, this is the only one that actually works. The science-backed formulation gives me confidence that it's safe and effective.",
-            "author": "Farhan M.",
-            "verified": true
-          }
-        }
-      ]
+      "name": "DUAB Testimonials"
     }
   ]
 }

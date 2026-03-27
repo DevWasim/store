@@ -1,45 +1,49 @@
 /* ============================================
-   DUAB — Premium Emerald Performance Theme
-   Dark Blue-Grey #1A1A2E | Emerald #10B981 | Navy #0F3460
+   DUAB — Premium Emerald Performance Theme V3
+   Page BG #1C2333 | Section Alt #162032 | Accent #10B981
+   Footer #111827 | NEVER use #000000 or #0A0A0A
    ============================================ */
 
 /* --- Core Design Tokens --- */
 :root {
-  --duab-black: #1A1A2E;
-  --duab-charcoal: #16213E;
-  --duab-charcoal-dark: #0F3460;
+  --duab-bg: #1C2333;
+  --duab-section-alt: #162032;
+  --duab-card-bg: #1C2333;
+  --duab-footer-bg: #111827;
   --duab-border: rgba(16, 185, 129, 0.15);
-  --duab-border-subtle: rgba(16, 185, 129, 0.12);
+  --duab-border-hover: rgba(16, 185, 129, 0.25);
   --duab-emerald: #10B981;
   --duab-emerald-hover: #059669;
   --duab-emerald-glow: rgba(16, 185, 129, 0.12);
-  --duab-emerald-divider: rgba(16, 185, 129, 0.12);
+  --duab-emerald-glow-soft: rgba(16, 185, 129, 0.08);
+  --duab-emerald-divider: rgba(16, 185, 129, 0.2);
   --duab-white: #FFFFFF;
   --duab-grey: #94A3B8;
+  --duab-near-black: #0D1117;
   --duab-font-heading: 'Syne', sans-serif;
   --duab-font-body: 'DM Sans', sans-serif;
   --duab-radius-card: 12px;
   --duab-radius-btn: 6px;
-  --duab-radius-btn-large: 8px;
+  --duab-radius-btn-lg: 8px;
   --duab-transition: all 0.25s ease;
 }
 
 /* --- Global Resets & Base --- */
-body, p, span, a, li, input, textarea, select {
+html {
+  background-color: var(--duab-bg) !important;
+}
+body {
   font-family: var(--duab-font-body) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--duab-black) !important;
+  background-color: var(--duab-bg) !important;
   color: var(--duab-white) !important;
 }
-
-.content-for-layout {
-  background-color: var(--duab-black);
+p, span, a, li, input, textarea, select, label, div {
+  font-family: var(--duab-font-body);
 }
-
-/* Strip out shadows entirely except specified */
-* {
-  box-shadow: none !important;
+.content-for-layout {
+  background-color: var(--duab-bg);
 }
 
 /* --- Typography --- */
@@ -50,14 +54,13 @@ h1, h2, h3, h4, h5, h6,
   color: var(--duab-white) !important;
   margin-top: 0;
 }
-
-h1 strong, h2 strong, h3 strong, .h1 strong, .h2 strong, .h3 strong {
+h1 strong, h2 strong, h3 strong,
+.h1 strong, .h2 strong, .h3 strong {
   font-weight: 800 !important;
 }
 
-/* Section Heading Accent */
-.shopify-section h2:not(.footer h2):not(.wellness-trust__heading h2):after,
-.shopify-section h3:not(.footer h3):not(.wellness-trust__heading h3):after {
+/* Section Heading Green Accent Underline */
+.duab-section__heading::after {
   content: '';
   display: block;
   width: 40px;
@@ -65,17 +68,6 @@ h1 strong, h2 strong, h3 strong, .h1 strong, .h2 strong, .h3 strong {
   background-color: var(--duab-emerald);
   margin: 16px auto 0;
   border-radius: 2px;
-}
-  
-.shopify-section h2.text-left:after,
-.shopify-section h3.text-left:after,
-.product-recommendations h3:after {
-  margin-left: 0;
-}
-
-.wellness-faq__heading h2:after,
-.wellness-about__value-card h3:after {
-  display: none !important;
 }
 
 /* --- Buttons --- */
@@ -87,77 +79,87 @@ input[type="submit"] {
   text-transform: uppercase !important;
   letter-spacing: 1.5px !important;
   font-weight: 700 !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   border-radius: var(--duab-radius-btn) !important;
   transition: var(--duab-transition) !important;
   background: var(--duab-emerald) !important;
-  color: var(--duab-black) !important;
+  color: var(--duab-near-black) !important;
   padding: 14px 32px !important;
   border: none !important;
 }
-
 .button:hover,
 button[type="submit"]:hover,
 input[type="submit"]:hover {
   background: var(--duab-emerald-hover) !important;
   transform: scale(1.02) !important;
 }
-
 .button--secondary,
 .button-secondary {
   background: transparent !important;
-  border: 1px solid var(--duab-emerald) !important;
+  border: 1.5px solid var(--duab-emerald) !important;
   color: var(--duab-emerald) !important;
 }
-
 .button--secondary:hover,
 .button-secondary:hover {
   background: var(--duab-emerald) !important;
-  color: var(--duab-black) !important;
+  color: var(--duab-near-black) !important;
   transform: scale(1.02) !important;
+}
+
+/* Links */
+a {
+  color: var(--duab-emerald);
+  transition: color 0.25s ease;
+}
+a:hover {
+  color: var(--duab-emerald-hover);
 }
 
 
 /* ============================================
-   HEADER & ANNOUNCEMENT BAR
+   ANNOUNCEMENT BAR
    ============================================ */
 .announcement-bar,
 [class*="announcement"] {
   background-color: var(--duab-emerald) !important;
-  color: var(--duab-black) !important;
+  color: var(--duab-near-black) !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px;
   padding: 8px 0 !important;
 }
-
 .announcement-bar a,
-[class*="announcement"] a {
-  color: var(--duab-black) !important;
+[class*="announcement"] a,
+[class*="announcement"] span,
+[class*="announcement"] p {
+  color: var(--duab-near-black) !important;
   font-weight: 700 !important;
 }
 
+
+/* ============================================
+   HEADER
+   ============================================ */
 header,
 .header,
 header-component,
 .header-section {
-  background-color: var(--duab-charcoal) !important;
-  border-bottom: 1px solid var(--duab-border-subtle) !important;
+  background-color: var(--duab-bg) !important;
+  border-bottom: 1px solid var(--duab-border-hover) !important;
 }
-
 header-component[sticky] {
-  background-color: var(--duab-charcoal) !important;
-  border-bottom: 1px solid var(--duab-border-subtle) !important;
+  background-color: var(--duab-bg) !important;
+  border-bottom: 1px solid var(--duab-border-hover) !important;
 }
-
 .header__heading-logo,
 .header__heading-link {
   font-family: var(--duab-font-heading) !important;
   font-weight: 700 !important;
-  font-size: 26px !important;
+  font-size: 24px !important;
   color: var(--duab-white) !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase;
 }
-
 /* Nav links */
 .header nav a,
 .header__menu a,
@@ -166,34 +168,32 @@ header-component a[href],
   color: var(--duab-grey) !important;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-family: var(--duab-font-body) !important;
   font-weight: 500 !important;
   transition: var(--duab-transition) !important;
   text-decoration: none !important;
 }
-
 .header nav a:hover,
 .header__menu a:hover,
 header-component a[href]:hover,
 [class*="header"] nav a:hover {
   color: var(--duab-white) !important;
 }
-
 .header svg,
 header-component svg,
 .header__icon svg {
   color: var(--duab-white) !important;
   stroke: var(--duab-white) !important;
 }
-
 .cart-count-bubble,
 [class*="cart-bubble"],
 [class*="cart-count"] {
   background-color: var(--duab-emerald) !important;
-  color: var(--duab-black) !important;
+  color: var(--duab-near-black) !important;
   font-weight: 700 !important;
 }
+
 
 /* ============================================
    HERO SECTION
@@ -203,19 +203,28 @@ header-component svg,
 .banner,
 [class*="banner"] {
   position: relative;
-  min-height: 100vh;
-  background-color: var(--duab-black) !important;
+  min-height: 100vh !important;
+  min-height: 500px;
+  background: linear-gradient(135deg, #1C2333 0%, #162032 50%, #0F2744 100%) !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Subtle dark teal overlay gradient */
+/* Radial emerald glow pseudo-element */
+.hero__media-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  z-index: 11;
+  pointer-events: none;
+}
 .hero__media-grid::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(26, 33, 62, 0.75), rgba(15, 52, 96, 0.85));
+  background: linear-gradient(135deg, rgba(28,35,51,0.9) 0%, rgba(22,32,50,0.85) 50%, rgba(15,39,68,0.8) 100%);
   z-index: 10;
   pointer-events: none;
 }
@@ -224,51 +233,391 @@ header-component svg,
   font-family: var(--duab-font-body) !important;
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--duab-emerald) !important;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.hero-title {
+.hero h1,
+.hero .h1 {
   font-family: var(--duab-font-heading) !important;
-  font-size: 72px !important;
+  font-size: 64px !important;
   font-weight: 800 !important;
   color: var(--duab-white) !important;
   line-height: 1.1 !important;
   margin-bottom: 24px !important;
 }
 
-.hero-subtitle {
+.hero p,
+.hero .rte p {
   font-family: var(--duab-font-body) !important;
-  font-size: 18px !important;
+  font-size: 17px !important;
   color: var(--duab-grey) !important;
   font-weight: 400 !important;
-  line-height: 1.6 !important;
+  line-height: 1.7 !important;
   max-width: 600px !important;
   margin: 0 auto 32px !important;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-}
 
 /* ============================================
-   PRODUCT CARDS
+   BENEFITS SECTION
+   ============================================ */
+.duab-benefits {
+  background: var(--duab-section-alt) !important;
+  padding: 80px 0;
+}
+.duab-benefits__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.duab-benefits__label {
+  font-family: var(--duab-font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--duab-emerald);
+  margin-bottom: 12px;
+  display: block;
+}
+.duab-benefits__title {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: var(--duab-white) !important;
+  margin-bottom: 16px !important;
+}
+.duab-benefits__accent {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--duab-emerald);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+.duab-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.duab-benefits__card {
+  background: var(--duab-card-bg);
+  border: 1px solid var(--duab-border);
+  border-radius: var(--duab-radius-card);
+  padding: 28px 24px;
+  transition: var(--duab-transition);
+}
+.duab-benefits__card:hover {
+  border-color: var(--duab-emerald);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
+}
+.duab-benefits__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--duab-emerald-glow);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.duab-benefits__card-title {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--duab-white) !important;
+  margin-bottom: 8px;
+}
+.duab-benefits__card-desc {
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  color: var(--duab-grey);
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ============================================
+   FEATURED PRODUCTS SECTION
+   ============================================ */
+.duab-products {
+  background: var(--duab-bg) !important;
+  padding: 80px 0;
+}
+.duab-products__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.duab-products__label {
+  font-family: var(--duab-font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--duab-emerald);
+  margin-bottom: 12px;
+  display: block;
+}
+.duab-products__title {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: var(--duab-white) !important;
+  margin-bottom: 16px !important;
+}
+.duab-products__accent {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--duab-emerald);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+.duab-products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.duab-products__card {
+  background: var(--duab-card-bg);
+  border: 1px solid var(--duab-border);
+  border-radius: var(--duab-radius-card);
+  overflow: hidden;
+  transition: var(--duab-transition);
+  position: relative;
+}
+.duab-products__card:hover {
+  border-color: var(--duab-emerald);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
+}
+.duab-products__card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+.duab-products__card-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #162032, #0F2744);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--duab-font-heading);
+  font-size: 14px;
+  color: var(--duab-emerald);
+  text-align: center;
+  padding: 20px;
+}
+.duab-products__card-body {
+  padding: 16px;
+}
+.duab-products__card-name {
+  font-family: var(--duab-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--duab-white);
+  margin-bottom: 8px;
+  text-decoration: none;
+  display: block;
+}
+.duab-products__card-name:hover {
+  color: var(--duab-white);
+}
+.duab-products__card-price {
+  font-family: var(--duab-font-body);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--duab-emerald);
+  margin-bottom: 12px;
+}
+.duab-products__card-compare {
+  font-size: 12px;
+  color: var(--duab-grey);
+  text-decoration: line-through;
+  margin-left: 8px;
+  font-weight: 400;
+}
+.duab-products__sold-out {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--duab-emerald);
+  color: var(--duab-near-black);
+  font-family: var(--duab-font-body);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.duab-products__atc {
+  display: block;
+  width: 100%;
+  background: var(--duab-emerald);
+  color: var(--duab-near-black);
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: var(--duab-radius-btn);
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--duab-transition);
+  text-align: center;
+  text-decoration: none;
+}
+.duab-products__atc:hover {
+  background: var(--duab-emerald-hover);
+}
+
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.duab-testimonials {
+  background: var(--duab-section-alt) !important;
+  padding: 80px 0;
+}
+.duab-testimonials__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.duab-testimonials__label {
+  font-family: var(--duab-font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--duab-emerald);
+  margin-bottom: 12px;
+  display: block;
+}
+.duab-testimonials__title {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: var(--duab-white) !important;
+  margin-bottom: 16px !important;
+}
+.duab-testimonials__accent {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--duab-emerald);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+.duab-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.duab-testimonials__card {
+  background: var(--duab-card-bg);
+  border: 1px solid var(--duab-border);
+  border-radius: var(--duab-radius-card);
+  padding: 24px;
+  transition: var(--duab-transition);
+}
+.duab-testimonials__card:hover {
+  border-color: var(--duab-emerald);
+}
+.duab-testimonials__stars {
+  color: var(--duab-emerald);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.duab-testimonials__quote {
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  color: var(--duab-grey);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.duab-testimonials__reviewer {
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  color: var(--duab-white);
+  font-weight: 700;
+}
+
+
+/* ============================================
+   TRUST BADGES SECTION
+   ============================================ */
+.duab-trust {
+  background: var(--duab-bg) !important;
+  padding: 60px 40px;
+}
+.duab-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.duab-trust__badge {
+  background: var(--duab-card-bg);
+  border: 1px solid var(--duab-border);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: var(--duab-transition);
+}
+.duab-trust__badge:hover {
+  border-color: var(--duab-emerald);
+  transform: translateY(-4px);
+}
+.duab-trust__icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+.duab-trust__title {
+  font-family: var(--duab-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--duab-white);
+  margin-bottom: 4px;
+}
+.duab-trust__subtitle {
+  font-family: var(--duab-font-body);
+  font-size: 11px;
+  color: var(--duab-grey);
+  margin: 0;
+}
+
+
+/* ============================================
+   PRODUCT CARDS (Dawn built-in)
    ============================================ */
 .product-card,
 .card,
 [class*="product-card"],
 .collection-product-card {
-  background-color: var(--duab-charcoal) !important;
+  background-color: var(--duab-card-bg) !important;
   border: 1px solid var(--duab-border) !important;
   border-radius: var(--duab-radius-card) !important;
   overflow: hidden;
   transition: var(--duab-transition) !important;
 }
-
 .product-card:hover,
 .card:hover,
 [class*="product-card"]:hover,
@@ -277,21 +626,18 @@ header-component svg,
   transform: translateY(-6px) !important;
   box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
 }
-
 .card__media,
 .product-card__image-wrapper {
-  background-color: var(--duab-charcoal-dark) !important;
+  background-color: var(--duab-section-alt) !important;
 }
-
 .product-card__title,
 .card__heading,
 [class*="product-card"] [class*="title"] {
   font-family: var(--duab-font-body) !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   font-weight: 500 !important;
   color: var(--duab-white) !important;
 }
-
 .product-card__price,
 .price,
 [class*="price"] {
@@ -300,25 +646,25 @@ header-component svg,
   font-size: 17px !important;
   color: var(--duab-emerald) !important;
 }
-
 .price__sale s,
 .price-item--regular s {
   color: var(--duab-grey) !important;
+  font-size: 12px !important;
   opacity: 0.7;
 }
-
 .badge,
 [class*="badge"] {
   background-color: var(--duab-emerald) !important;
-  color: var(--duab-black) !important;
+  color: var(--duab-near-black) !important;
   font-family: var(--duab-font-body) !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  border-radius: 100px !important;
-  font-size: 11px !important;
+  letter-spacing: 1px !important;
+  border-radius: 20px !important;
+  font-size: 10px !important;
   padding: 4px 10px !important;
 }
+
 
 /* ============================================
    PRODUCT DETAIL PAGE
@@ -326,18 +672,16 @@ header-component svg,
 .product__title,
 .product__title h1 {
   font-family: var(--duab-font-heading) !important;
-  font-size: 38px !important;
+  font-size: 34px !important;
   color: var(--duab-white) !important;
   font-weight: 700 !important;
 }
-
 .product__price {
   font-family: var(--duab-font-body) !important;
   font-size: 26px !important;
   color: var(--duab-emerald) !important;
   font-weight: 700 !important;
 }
-
 .product__price-wrapper::after {
   content: '';
   display: block;
@@ -346,7 +690,6 @@ header-component svg,
   background: var(--duab-emerald-divider);
   margin-top: 24px;
 }
-
 .product__description,
 .product__description p {
   font-family: var(--duab-font-body) !important;
@@ -354,165 +697,34 @@ header-component svg,
   color: var(--duab-grey) !important;
   line-height: 1.9 !important;
 }
-
 .quantity__input,
 input[name="quantity"],
 .quantity {
-  background-color: var(--duab-charcoal) !important;
-  border-color: var(--duab-border) !important;
+  background-color: var(--duab-section-alt) !important;
+  border: 1px solid var(--duab-border-hover) !important;
+  border-radius: var(--duab-radius-btn) !important;
   color: var(--duab-white) !important;
 }
-
 .product-form__submit,
 .product-form button[type="submit"] {
   width: 100% !important;
-  height: 54px !important;
+  height: 52px !important;
   background: var(--duab-emerald) !important;
-  color: var(--duab-black) !important;
+  color: var(--duab-near-black) !important;
   font-weight: 700 !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   text-transform: uppercase !important;
   letter-spacing: 1.5px !important;
-  border-radius: var(--duab-radius-btn-large) !important;
+  border-radius: var(--duab-radius-btn-lg) !important;
   border: none !important;
   transition: var(--duab-transition) !important;
 }
-
 .product-form__submit:hover,
 .product-form button[type="submit"]:hover {
   background: var(--duab-emerald-hover) !important;
   transform: scale(1.01) !important;
 }
 
-/* ============================================
-   TRUST BADGES
-   ============================================ */
-.wellness-trust {
-  padding: 80px 0;
-  background: var(--duab-charcoal) !important;
-  border-top: 1px solid var(--duab-emerald-divider);
-  border-bottom: 1px solid var(--duab-emerald-divider);
-}
-
-.wellness-trust__heading h2 {
-  color: var(--duab-white) !important;
-}
-
-.wellness-trust__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.wellness-trust__badge {
-  text-align: center;
-  padding: 32px 20px;
-  background: var(--duab-charcoal);
-  border-radius: var(--duab-radius-card);
-  border: 1px solid var(--duab-border);
-  transition: var(--duab-transition);
-}
-
-.wellness-trust__badge:hover {
-  border-color: var(--duab-emerald);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
-}
-
-.wellness-trust__badge-icon,
-.wellness-trust__badge-icon svg {
-  color: var(--duab-emerald) !important;
-}
-
-/* Inline trust badges below ATC */
-.inline-trust-badges {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
-  padding-top: 24px;
-}
-.inline-trust-badges svg {
-  color: var(--duab-emerald) !important;
-  margin: 0 auto;
-}
-.inline-trust-badges .label {
-  font-family: var(--duab-font-body);
-  font-size: 12px;
-  color: var(--duab-grey);
-  margin-top: 8px;
-}
-
-/* ============================================
-   BENEFITS & FAQ & TESTIMONIALS
-   ============================================ */
-.wellness-benefits {
-  background: var(--duab-charcoal) !important;
-}
-.wellness-benefits__item {
-  background: var(--duab-charcoal-dark) !important;
-  border: 1px solid var(--duab-border);
-  border-radius: var(--duab-radius-card);
-}
-.wellness-benefits__item:hover {
-  border-color: var(--duab-emerald);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
-}
-.wellness-benefits__img {
-  border-radius: 50%;
-  margin-bottom: 20px;
-  display: inline-block;
-  border: 1px solid var(--duab-border);
-}
-
-.wellness-faq__item {
-  border-bottom: 1px solid var(--duab-border);
-}
-.wellness-faq__item:first-child {
-  border-top: 1px solid var(--duab-border);
-}
-.wellness-faq__question {
-  color: var(--duab-white);
-  font-family: var(--duab-font-body);
-}
-.wellness-faq__question:hover {
-  color: var(--duab-emerald);
-}
-.wellness-faq__question svg {
-  color: var(--duab-emerald);
-}
-
-.wellness-testimonials {
-  background: var(--duab-charcoal) !important;
-}
-.wellness-testimonials__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-  z-index: 0;
-  pointer-events: none;
-}
-.wellness-testimonials__card {
-  background: var(--duab-charcoal-dark);
-  border: 1px solid var(--duab-border);
-  border-radius: var(--duab-radius-card);
-}
-.wellness-testimonials__card:hover {
-  border-color: var(--duab-emerald);
-}
-.wellness-testimonials__star {
-  color: var(--duab-emerald);
-}
-.wellness-testimonials__verified {
-  color: var(--duab-emerald);
-}
 
 /* ============================================
    FOOTER
@@ -520,25 +732,98 @@ input[name="quantity"],
 footer,
 .footer,
 [class*="footer"] {
-  background-color: var(--duab-charcoal) !important;
-  border-top: 1px solid var(--duab-border-subtle) !important;
+  background-color: var(--duab-footer-bg) !important;
+  border-top: 1px solid var(--duab-border) !important;
   color: var(--duab-grey) !important;
 }
-
-.footer__bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.05;
-  z-index: 0;
-  pointer-events: none;
+.duab-footer {
+  background: var(--duab-footer-bg);
+  border-top: 1px solid var(--duab-border);
+  padding: 48px 40px 24px;
 }
-.footer-content {
-  position: relative;
-  z-index: 1;
+.duab-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.duab-footer__logo {
+  font-family: var(--duab-font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--duab-white);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.duab-footer__tagline {
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  color: var(--duab-grey);
+  font-style: italic;
+}
+.duab-footer__heading {
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  color: var(--duab-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+.duab-footer__links a {
+  display: block;
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  color: var(--duab-grey) !important;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.duab-footer__links a:hover {
+  color: var(--duab-white) !important;
+}
+.duab-footer__input {
+  width: 100%;
+  background: var(--duab-bg);
+  border: 1px solid var(--duab-border-hover);
+  border-radius: var(--duab-radius-btn);
+  padding: 11px 14px;
+  color: var(--duab-white);
+  font-family: var(--duab-font-body);
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.duab-footer__input::placeholder {
+  color: var(--duab-grey);
+}
+.duab-footer__subscribe {
+  width: 100%;
+  background: var(--duab-emerald);
+  color: var(--duab-near-black);
+  font-family: var(--duab-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: var(--duab-radius-btn);
+  padding: 11px;
+  cursor: pointer;
+  transition: var(--duab-transition);
+}
+.duab-footer__subscribe:hover {
+  background: var(--duab-emerald-hover);
+}
+.duab-footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 20px;
+  margin-top: 32px;
+  text-align: center;
+  font-family: var(--duab-font-body);
+  font-size: 12px;
+  color: #4B5563;
 }
 
 footer h2, footer h3, footer h4,
@@ -546,79 +831,68 @@ footer h2, footer h3, footer h4,
   font-family: var(--duab-font-heading) !important;
   color: var(--duab-white) !important;
 }
-
-footer a,
-.footer a {
+footer a, .footer a {
   color: var(--duab-grey) !important;
-  transition: color 0.25s ease !important;
-  font-size: 14px !important;
+  transition: color 0.2s ease !important;
+  font-size: 13px !important;
 }
-
-footer a:hover,
-.footer a:hover {
+footer a:hover, .footer a:hover {
   color: var(--duab-white) !important;
 }
-
 .footer__bottom,
 [class*="footer-utilities"] {
-  background-color: var(--duab-black) !important;
-  color: var(--duab-grey) !important;
-  border-top: 1px solid var(--duab-border-subtle) !important;
+  background-color: var(--duab-footer-bg) !important;
+  color: #4B5563 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
   text-align: center;
 }
 
-/* ============================================
-   ABOUT PAGE
-   ============================================ */
-.wellness-about__value-card {
-  background: var(--duab-charcoal);
-  border: 1px solid var(--duab-border);
-  border-radius: var(--duab-radius-card);
-}
-.wellness-about__value-card:hover { border-color: var(--duab-emerald); }
 
 /* ============================================
-   SECTION DIVIDERS & SPACING
+   SECTION DIVIDERS & ALTERNATING BG
    ============================================ */
 .shopify-section + .shopify-section {
-  border-top: 1px solid var(--duab-emerald-divider);
+  border-top: none;
 }
-
 .shopify-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
-
 .shopify-section:nth-child(even) {
-  background-color: var(--duab-charcoal);
+  background-color: var(--duab-section-alt);
 }
 .shopify-section:nth-child(odd) {
-  background-color: var(--duab-black);
+  background-color: var(--duab-bg);
 }
+
 
 /* ============================================
    SCROLLBAR & DRAWERS
    ============================================ */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--duab-black); }
+::-webkit-scrollbar-track { background: var(--duab-bg); }
 ::-webkit-scrollbar-thumb { background: var(--duab-border); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--duab-emerald); }
 
 .cart-drawer, [class*="cart-drawer"] {
-  background-color: var(--duab-black) !important;
+  background-color: var(--duab-bg) !important;
 }
+
+/* Mobile hamburger overlay */
 .menu-drawer, [class*="header-drawer"] {
-  background-color: var(--duab-black) !important;
+  background-color: var(--duab-bg) !important;
 }
 .menu-drawer a, [class*="header-drawer"] a {
   color: var(--duab-grey) !important;
+  font-family: var(--duab-font-body) !important;
 }
 .menu-drawer a:hover, [class*="header-drawer"] a:hover {
   color: var(--duab-emerald) !important;
 }
 .search-modal, [class*="search-modal"] {
-  background-color: var(--duab-black) !important;
+  background-color: var(--duab-bg) !important;
 }
+
 
 /* ============================================
    404 PAGE
@@ -640,38 +914,89 @@ footer a:hover,
   font-family: var(--duab-font-body) !important;
 }
 
+
 /* ============================================
    RESPONSIVE — MOBILE
    ============================================ */
-@media (max-width: 991px) {
-  .product-list .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 599px) {
+@media (max-width: 768px) {
   .shopify-section {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-  
-  .hero-title {
-    font-size: 38px !important;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
-  .product__title h1 {
-    font-size: 32px !important;
+  .hero h1,
+  .hero .h1 {
+    font-size: 36px !important;
+  }
+
+  .hero p,
+  .hero .rte p {
+    font-size: 15px !important;
+  }
+
+  .duab-benefits__grid,
+  .duab-products__grid,
+  .duab-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .duab-trust__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .duab-benefits__title,
+  .duab-products__title,
+  .duab-testimonials__title {
+    font-size: 26px !important;
   }
 
   .product-list .grid {
     grid-template-columns: 1fr !important;
   }
-  
+
+  .product__title h1 {
+    font-size: 28px !important;
+  }
+
   .template-404 h1 {
     font-size: 72px !important;
   }
+
+  .duab-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .duab-trust {
+    padding: 48px 20px;
+  }
+
+  /* Mobile menu overlay */
+  .menu-drawer {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .duab-trust__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================
+   Strip box shadows except our hover effects
+   ============================================ */
+*:not(.duab-benefits__card):not(.duab-products__card):not(.duab-trust__badge):not(.product-card):not(.card):not([class*="product-card"]):not(.collection-product-card) {
+  box-shadow: none !important;
+}
+
+/* Re-enable hover shadows */
+.duab-benefits__card:hover,
+.duab-products__card:hover,
+.product-card:hover,
+.card:hover,
+[class*="product-card"]:hover,
+.collection-product-card:hover {
+  box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
 }
