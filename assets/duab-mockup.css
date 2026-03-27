@@ -1,0 +1,82 @@
+.duab-mockup-wrapper {
+  font-family: 'DM Sans', sans-serif;
+  background: #1C2333;
+  color: #fff;
+}
+
+.duab-mockup-wrapper h1, .duab-mockup-wrapper h2, .duab-mockup-wrapper h3, .duab-mockup-wrapper h4, .duab-mockup-wrapper .logo {
+  font-family: 'Syne', sans-serif;
+}
+
+.duab-announcement { background: #10B981; color: #0D1117; text-align: center; padding: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+
+.duab-header { background: #1C2333; border-bottom: 1px solid rgba(16,185,129,0.25); display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; }
+.duab-logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 3px; cursor: pointer; text-decoration: none; }
+.duab-nav { display: flex; gap: 28px; }
+.duab-nav a { color: #94A3B8; font-size: 12px; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; }
+.duab-nav a:hover { color: #10B981; }
+.duab-header-icons { display: flex; gap: 16px; color: #94A3B8; font-size: 18px; cursor: pointer; }
+
+.duab-hero { background: linear-gradient(135deg, #1C2333 0%, #162032 50%, #0F2744 100%); min-height: 420px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 60px 40px; position: relative; overflow: hidden; }
+.duab-hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.duab-hero-label { color: #10B981; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+.duab-hero h1 { font-size: 48px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+.duab-hero h1 span { color: #10B981; }
+.duab-hero p { color: #94A3B8; font-size: 16px; max-width: 480px; line-height: 1.7; margin-bottom: 32px; }
+.duab-hero-btns { display: flex; gap: 14px; position:relative; z-index:2; }
+.duab-btn-primary { background: #10B981; color: #0D1117; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 30px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; display:inline-block; }
+.duab-btn-secondary { background: transparent; color: #10B981; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 30px; border: 1.5px solid #10B981; border-radius: 6px; cursor: pointer; text-decoration: none; display:inline-block;}
+
+.duab-section { padding: 64px 40px; }
+.duab-section-alt { background: #162032; }
+.duab-section-label { color: #10B981; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; }
+.duab-section-title { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.duab-section-accent { display: inline-block; width: 40px; height: 3px; background: #10B981; margin-bottom: 36px; border-radius: 2px; }
+
+.duab-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.duab-benefit-card { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; padding: 28px 24px; }
+.duab-benefit-icon { width: 48px; height: 48px; background: rgba(16,185,129,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+.duab-benefit-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #fff;}
+.duab-benefit-card p { color: #94A3B8; font-size: 13px; line-height: 1.7; margin:0;}
+
+.duab-products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.duab-product-card { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; overflow: hidden; }
+.duab-product-img { height: 160px; background: linear-gradient(135deg, #162032, #0F2744); display: flex; align-items: center; justify-content: center; position: relative; }
+.duab-product-img-text { color: #10B981; font-size: 13px; font-weight: 600; opacity: 0.7; }
+.duab-sold-badge { position: absolute; top: 12px; right: 12px; background: #10B981; color: #0D1117; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 1px; }
+.duab-product-info { padding: 16px; }
+.duab-product-info h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+.duab-product-price { color: #10B981; font-size: 16px; font-weight: 800; margin-bottom: 12px; }
+.duab-product-price span { color: #94A3B8; font-size: 12px; font-weight: 400; text-decoration: line-through; margin-left: 6px; }
+.duab-add-btn { width: 100%; display:block; text-align:center; text-decoration:none; background: #10B981; color: #0D1117; border: none; border-radius: 6px; padding: 10px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+
+.duab-testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.duab-testi-card { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; padding: 24px; }
+.duab-stars { color: #10B981; font-size: 14px; margin-bottom: 12px; }
+.duab-testi-text { color: #94A3B8; font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+.duab-testi-author { font-size: 13px; font-weight: 700; color: #fff;}
+
+.duab-trust-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: 0 auto; }
+.duab-trust-item { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 10px; padding: 20px 16px; text-align: center; }
+.duab-trust-icon { font-size: 24px; margin-bottom: 10px; }
+.duab-trust-item p { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+.duab-trust-item span { font-size: 11px; color: #94A3B8; }
+
+.duab-footer { background: #111827; border-top: 1px solid rgba(16,185,129,0.15); padding: 48px 40px 24px; }
+.duab-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; max-width: 1200px; margin: 0 auto 40px; }
+.duab-footer-logo { font-size: 20px; font-weight: 800; letter-spacing: 3px; margin-bottom: 10px; color:#fff;}
+.duab-footer-tagline { color: #94A3B8; font-size: 13px; font-style: italic; }
+.duab-footer-links h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; color: #fff; }
+.duab-footer-links a { display: block; color: #94A3B8; font-size: 13px; margin-bottom: 8px; text-decoration: none; }
+.duab-newsletter input { width: 100%; background: #1C2333; border: 1px solid rgba(16,185,129,0.25); border-radius: 6px; padding: 11px 14px; color: #fff; font-size: 13px; margin-bottom: 10px; }
+.duab-newsletter button { width: 100%; background: #10B981; color: #0D1117; border: none; border-radius: 6px; padding: 11px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.duab-footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; text-align: center; color: #4B5563; font-size: 12px; max-width: 1200px; margin: 0 auto;}
+
+@media (max-width: 768px) {
+  .duab-benefits-grid, .duab-products-grid, .duab-testimonials, .duab-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .duab-trust-row {
+     grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #1C2333; color: #fff; }
+
+  .announcement { background: #10B981; color: #0D1117; text-align: center; padding: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+
+  .header { background: #1C2333; border-bottom: 1px solid rgba(16,185,129,0.25); display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; }
+  .logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 3px; }
+  .nav { display: flex; gap: 28px; }
+  .nav a { color: #94A3B8; font-size: 12px; letter-spacing: 2px; text-decoration: none; text-transform: uppercase; }
+  .nav a:hover { color: #10B981; }
+  .header-icons { display: flex; gap: 16px; color: #94A3B8; font-size: 18px; }
+
+  .hero { background: linear-gradient(135deg, #1C2333 0%, #162032 50%, #0F2744 100%); min-height: 420px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 60px 40px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .hero-label { color: #10B981; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+  .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+  .hero h1 span { color: #10B981; }
+  .hero p { color: #94A3B8; font-size: 16px; max-width: 480px; line-height: 1.7; margin-bottom: 32px; }
+  .hero-btns { display: flex; gap: 14px; }
+  .btn-primary { background: #10B981; color: #0D1117; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 30px; border: none; border-radius: 6px; cursor: pointer; }
+  .btn-secondary { background: transparent; color: #10B981; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; padding: 14px 30px; border: 1.5px solid #10B981; border-radius: 6px; cursor: pointer; }
+
+  .section { padding: 64px 40px; }
+  .section-alt { background: #162032; }
+  .section-label { color: #10B981; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; }
+  .section-title { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+  .section-accent { display: inline-block; width: 40px; height: 3px; background: #10B981; margin-bottom: 36px; border-radius: 2px; }
+
+  .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .benefit-card { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; padding: 28px 24px; }
+  .benefit-icon { width: 48px; height: 48px; background: rgba(16,185,129,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+  .benefit-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .benefit-card p { color: #94A3B8; font-size: 13px; line-height: 1.7; }
+
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .product-card { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; overflow: hidden; }
+  .product-img { height: 160px; background: linear-gradient(135deg, #162032, #0F2744); display: flex; align-items: center; justify-content: center; position: relative; }
+  .product-img-text { color: #10B981; font-size: 13px; font-weight: 600; opacity: 0.7; }
+  .sold-badge { position: absolute; top: 12px; right: 12px; background: #10B981; color: #0D1117; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 1px; }
+  .product-info { padding: 16px; }
+  .product-info h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .product-price { color: #10B981; font-size: 16px; font-weight: 800; margin-bottom: 12px; }
+  .product-price span { color: #94A3B8; font-size: 12px; font-weight: 400; text-decoration: line-through; margin-left: 6px; }
+  .add-btn { width: 100%; background: #10B981; color: #0D1117; border: none; border-radius: 6px; padding: 10px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+
+  .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .testi-card { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; padding: 24px; }
+  .stars { color: #10B981; font-size: 14px; margin-bottom: 12px; }
+  .testi-text { color: #94A3B8; font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+  .testi-author { font-size: 13px; font-weight: 700; }
+
+  .trust-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .trust-item { background: #1C2333; border: 1px solid rgba(16,185,129,0.15); border-radius: 10px; padding: 20px 16px; text-align: center; }
+  .trust-icon { font-size: 24px; margin-bottom: 10px; }
+  .trust-item p { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .trust-item span { font-size: 11px; color: #94A3B8; }
+
+  .footer { background: #111827; border-top: 1px solid rgba(16,185,129,0.15); padding: 48px 40px 24px; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+  .footer-logo { font-size: 20px; font-weight: 800; letter-spacing: 3px; margin-bottom: 10px; }
+  .footer-tagline { color: #94A3B8; font-size: 13px; font-style: italic; }
+  .footer-links h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; color: #fff; }
+  .footer-links a { display: block; color: #94A3B8; font-size: 13px; margin-bottom: 8px; text-decoration: none; }
+  .newsletter input { width: 100%; background: #1C2333; border: 1px solid rgba(16,185,129,0.25); border-radius: 6px; padding: 11px 14px; color: #fff; font-size: 13px; margin-bottom: 10px; }
+  .newsletter button { width: 100%; background: #10B981; color: #0D1117; border: none; border-radius: 6px; padding: 11px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; text-align: center; color: #4B5563; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="announcement">🔒 Free Discreet Shipping Over Rs. 5,000 — 30-Day Money-Back Guarantee</div>
+
+<div class="header">
+  <div class="logo">DUAB</div>
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Catalog</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="header-icons">🔍 👤 🛒</div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Premium Men's Wellness</div>
+  <h1>Perform Better.<br><span>Last Longer.</span></h1>
+  <p>Scientifically formulated for men who demand more. Metro Cream — trusted by thousands, proven for 6 hours.</p>
+  <div class="hero-btns">
+    <button class="btn-primary">Shop Metro Cream</button>
+    <button class="btn-secondary">Learn More</button>
+  </div>
+</div>
+
+<div class="section section-alt">
+  <div style="text-align:center">
+    <div class="section-label">Why Choose Us</div>
+    <div class="section-title">Built for Performance</div>
+    <div class="section-accent" style="margin:0 auto"></div>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3>Fast Acting</h3>
+      <p>Begins working within 15 minutes of application for reliable, on-demand performance.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">⏱️</div>
+      <h3>6 Hour Duration</h3>
+      <p>Metro Cream maintains peak effectiveness for up to 6 hours — no reapplication needed.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">📦</div>
+      <h3>Discreet Delivery</h3>
+      <p>Plain packaging, no product names printed outside. Your privacy is our top priority.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Featured Products</div>
+  <div class="section-title">Our Best Sellers</div>
+  <div class="section-accent"></div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-text">METRO CREAM</div>
+        <div class="sold-badge">BEST SELLER</div>
+      </div>
+      <div class="product-info">
+        <h4>Metro Man Power Cream — 6 Hours Duration</h4>
+        <div class="product-price">Rs. 1,500 <span>Rs. 3,000</span></div>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-text">POWER BOOST</div>
+      </div>
+      <div class="product-info">
+        <h4>Power Boost Stamina Capsules</h4>
+        <div class="product-price">Rs. 2,200 <span>Rs. 4,000</span></div>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <div class="product-img-text">COMBO PACK</div>
+      </div>
+      <div class="product-info">
+        <h4>Performance Combo Pack — Complete Kit</h4>
+        <div class="product-price">Rs. 3,500 <span>Rs. 6,500</span></div>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section section-alt">
+  <div style="text-align:center">
+    <div class="section-label">Real Results</div>
+    <div class="section-title">What Our Customers Say</div>
+    <div class="section-accent" style="margin:0 auto; margin-bottom: 36px;"></div>
+  </div>
+  <div class="testimonials">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Metro cream changed everything. Works exactly as described, fast and lasts all night. Discreet packaging too."</div>
+      <div class="testi-author">Ahmed K. — Karachi</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Finally a product that actually works. I was skeptical but after the first use I ordered 3 more. Highly recommend."</div>
+      <div class="testi-author">Usman R. — Lahore</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-text">"Delivery was fast and private. The product works great and the 6 hour claim is real. Very satisfied customer."</div>
+      <div class="testi-author">Bilal M. — Islamabad</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="trust-row">
+    <div class="trust-item">
+      <div class="trust-icon">🔬</div>
+      <p>Lab Tested</p>
+      <span>Clinically verified formula</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📦</div>
+      <p>Discreet Packaging</p>
+      <span>Plain box, no labels</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">↩️</div>
+      <p>30-Day Returns</p>
+      <span>No questions asked</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚚</div>
+      <p>Fast Shipping</p>
+      <span>Delivered in 2–3 days</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">DUAB</div>
+      <div class="footer-tagline">Performance. Privacy. Power.</div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Catalog</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="newsletter">
+      <h4 style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Stay Updated</h4>
+      <input placeholder="Your email address" />
+      <button>Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 DUAB. All rights reserved. Discreet billing & shipping guaranteed.</div>
+</div>
+
+</body>
+</html>

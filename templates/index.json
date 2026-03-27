@@ -1,74 +1,31 @@
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "mockup_hero": {
+      "type": "duab-mockup-hero",
       "settings": {}
     },
-    "header": {
-      "type": "header",
+    "mockup_benefits": {
+      "type": "duab-mockup-benefits",
       "settings": {}
     },
-    "hero": {
-      "type": "image-banner",
-      "settings": {
-        "image_overlay_opacity": 60,
-        "show_text_box": true,
-        "heading": "Perform Better. Last Longer.",
-        "subheading": "Scientifically formulated for men who demand more. Metro Cream — trusted by thousands, proven for 6 hours.",
-        "button_label": "Shop Metro Cream",
-        "button_link": "/collections/all",
-        "button_style_secondary_label": "Learn More",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "benefits": {
-      "type": "duab-benefits",
+    "mockup_products": {
+      "type": "duab-mockup-products",
       "settings": {}
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Our Best Sellers",
-        "collection": "",
-        "columns_desktop": 3,
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": true,
-        "color_scheme": "background-1",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
-    "testimonials": {
-      "type": "wellness-testimonials",
+    "mockup_testimonials": {
+      "type": "duab-mockup-testimonials",
       "settings": {}
     },
-    "trust-badges": {
-      "type": "wellness-trust-badges",
-      "settings": {}
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {}
-    },
-    "footer": {
-      "type": "footer",
+    "mockup_trust": {
+      "type": "duab-mockup-trust",
       "settings": {}
     }
   },
   "order": [
-    "announcement-bar",
-    "header",
-    "hero",
-    "benefits",
-    "featured-collection",
-    "testimonials",
-    "trust-badges",
-    "newsletter",
-    "footer"
+    "mockup_hero",
+    "mockup_benefits",
+    "mockup_products",
+    "mockup_testimonials",
+    "mockup_trust"
   ]
 }

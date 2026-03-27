@@ -1,0 +1,75 @@
+<div class="duab-mockup-wrapper">
+  <div class="duab-section">
+    <div style="text-align:center">
+      <div class="duab-section-label">Featured Products</div>
+      <div class="duab-section-title">Our Best Sellers</div>
+      <div class="duab-section-accent" style="margin:0 auto; margin-bottom:36px;"></div>
+    </div>
+    <div class="duab-products-grid">
+      {%- for product in collections.all.products limit: 3 -%}
+        <div class="duab-product-card">
+          <div class="duab-product-img">
+            <div class="duab-product-img-text">{{ product.title | upcase }}</div>
+            {% if forloop.first %}
+              <div class="duab-sold-badge">BEST SELLER</div>
+            {% endif %}
+          </div>
+          <div class="duab-product-info">
+            <h4>{{ product.title }}</h4>
+            <div class="duab-product-price">
+              {{ product.price | money }} 
+              {% if product.compare_at_price > product.price %}
+                <span>{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+            <a href="{{ product.url }}" class="duab-add-btn">Add to Cart</a>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="duab-product-card">
+          <div class="duab-product-img">
+            <div class="duab-product-img-text">METRO CREAM</div>
+            <div class="duab-sold-badge">BEST SELLER</div>
+          </div>
+          <div class="duab-product-info">
+            <h4>Metro Man Power Cream — 6 Hours Duration</h4>
+            <div class="duab-product-price">Rs. 1,500 <span>Rs. 3,000</span></div>
+            <a href="#" class="duab-add-btn">Add to Cart</a>
+          </div>
+        </div>
+        <div class="duab-product-card">
+          <div class="duab-product-img">
+            <div class="duab-product-img-text">POWER BOOST</div>
+          </div>
+          <div class="duab-product-info">
+            <h4>Power Boost Stamina Capsules</h4>
+            <div class="duab-product-price">Rs. 2,200 <span>Rs. 4,000</span></div>
+            <a href="#" class="duab-add-btn">Add to Cart</a>
+          </div>
+        </div>
+        <div class="duab-product-card">
+          <div class="duab-product-img">
+            <div class="duab-product-img-text">COMBO PACK</div>
+          </div>
+          <div class="duab-product-info">
+            <h4>Performance Combo Pack — Complete Kit</h4>
+            <div class="duab-product-price">Rs. 3,500 <span>Rs. 6,500</span></div>
+            <a href="#" class="duab-add-btn">Add to Cart</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mockup Products",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Mockup Products"
+    }
+  ]
+}
+{% endschema %}

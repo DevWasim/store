@@ -1,0 +1,34 @@
+<div class="duab-mockup-wrapper">
+  <div class="duab-footer">
+    <div class="duab-footer-grid">
+      <div>
+        <div class="duab-footer-logo">DUAB</div>
+        <div class="duab-footer-tagline">Performance. Privacy. Power.</div>
+      </div>
+      <div class="duab-footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/collections/all">Catalog</a>
+        <a href="/pages/about">About Us</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/policies/privacy-policy">Privacy Policy</a>
+      </div>
+      <div class="duab-newsletter">
+        <h4 style="font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Stay Updated</h4>
+        {%- form 'customer', id: 'ContactFooter' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" name="contact[email]" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        {%- endform -%}
+      </div>
+    </div>
+    <div class="duab-footer-bottom">© 2025 DUAB. All rights reserved. Discreet billing & shipping guaranteed.</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mockup Footer",
+  "tag": "section"
+}
+{% endschema %}
