@@ -1,215 +1,362 @@
 /* ============================================
-   DUAB Store — Men's Sexual Wellness
-   Custom Design System
+   DUAB — Premium Dark Luxury Theme
+   Charcoal #0D0D0D | Gold #C9A84C | Navy #1A1F36
    ============================================ */
 
-/* --- CSS Custom Properties --- */
+/* --- Core Design Tokens --- */
 :root {
-  --wellness-navy: #0A1628;
-  --wellness-navy-light: #122240;
-  --wellness-navy-mid: #0F1D32;
-  --wellness-navy-dark: #050D1A;
-  --wellness-gold: #B8943E;
-  --wellness-gold-light: #D4AF50;
-  --wellness-gold-muted: #B8943E33;
-  --wellness-grey-100: #F8F9FA;
-  --wellness-grey-200: #E5E7EB;
-  --wellness-grey-300: #D1D5DB;
-  --wellness-grey-500: #6B7280;
-  --wellness-grey-700: #374151;
-  --wellness-white: #ffffff;
-  --wellness-font-body: 'Inter', sans-serif;
-  --wellness-font-heading: 'Inter', sans-serif;
-  --wellness-radius: 4px;
-  --wellness-radius-lg: 8px;
-  --wellness-shadow-sm: 0 1px 3px rgba(10, 22, 40, 0.08);
-  --wellness-shadow-md: 0 4px 12px rgba(10, 22, 40, 0.1);
-  --wellness-shadow-lg: 0 8px 30px rgba(10, 22, 40, 0.12);
-  --wellness-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --duab-black: #0D0D0D;
+  --duab-gold: #C9A84C;
+  --duab-gold-dark: #A8893D;
+  --duab-gold-glow: rgba(201, 168, 76, 0.4);
+  --duab-gold-subtle: rgba(201, 168, 76, 0.3);
+  --duab-gold-faint: rgba(201, 168, 76, 0.1);
+  --duab-navy: #1A1F36;
+  --duab-navy-light: #252B45;
+  --duab-navy-border: #2A2F4A;
+  --duab-white: #FFFFFF;
+  --duab-grey: #A0A0A0;
+  --duab-grey-dark: #666666;
+  --duab-near-black: #111111;
+  --duab-font-heading: 'Playfair Display', Georgia, serif;
+  --duab-font-body: 'Inter', -apple-system, sans-serif;
+  --duab-radius: 4px;
+  --duab-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Global Overrides --- */
+/* --- Global Resets & Base --- */
 body {
-  font-family: var(--wellness-font-body);
+  font-family: var(--duab-font-body) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--duab-black) !important;
+  color: var(--duab-grey) !important;
 }
 
-/* --- Tagline Under Logo --- */
-.wellness-tagline {
-  display: block;
-  font-size: 14px;
-  color: var(--wellness-grey-500);
+/* Force dark backgrounds globally */
+.content-for-layout {
+  background-color: var(--duab-black);
+}
+
+/* --- Typography Overrides --- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--duab-font-heading) !important;
+  color: var(--duab-white) !important;
+}
+
+/* --- Remove Default Shadows, Add Gold Glow --- */
+* {
+  box-shadow: none !important;
+}
+
+/* --- Button Overrides --- */
+.button,
+button[type="submit"],
+.shopify-payment-button button,
+input[type="submit"] {
+  font-family: var(--duab-font-body) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  border-radius: var(--duab-radius) !important;
+  transition: var(--duab-transition) !important;
+}
+
+.button:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  box-shadow: 0 0 12px var(--duab-gold-glow) !important;
+}
+
+/* --- Link Styles --- */
+a {
+  transition: color 0.3s ease !important;
+}
+
+/* ============================================
+   ANNOUNCEMENT BAR
+   ============================================ */
+.announcement-bar,
+[class*="announcement"] {
+  background-color: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+  font-weight: 700 !important;
   letter-spacing: 0.5px;
-  margin-top: 4px;
-  font-weight: 400;
+}
+
+.announcement-bar a,
+[class*="announcement"] a {
+  color: var(--duab-black) !important;
+  font-weight: 700 !important;
 }
 
 /* ============================================
-   BENEFITS SECTION
+   HEADER / NAVIGATION
    ============================================ */
-.wellness-benefits {
-  padding: 80px 0;
-  background: var(--wellness-grey-100);
+header,
+.header,
+header-component,
+.header-section {
+  background-color: var(--duab-black) !important;
+  border-bottom: 1px solid var(--duab-gold) !important;
 }
 
-.wellness-benefits__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* Sticky header */
+header-component[sticky] {
+  background-color: var(--duab-black) !important;
 }
 
-.wellness-benefits__item {
-  text-align: center;
-  padding: 40px 28px;
-  background: var(--wellness-white);
-  border-radius: var(--wellness-radius-lg);
-  box-shadow: var(--wellness-shadow-sm);
-  transition: var(--wellness-transition);
-  border: 1px solid transparent;
+/* Nav links */
+.header nav a,
+.header__menu a,
+header-component a[href],
+[class*="header"] nav a {
+  color: var(--duab-white) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-size: 13px !important;
+  font-family: var(--duab-font-body) !important;
+  font-weight: 500 !important;
+  transition: color 0.3s ease !important;
+  text-decoration: none !important;
 }
 
-.wellness-benefits__item:hover {
-  box-shadow: var(--wellness-shadow-md);
-  border-color: var(--wellness-gold-muted);
-  transform: translateY(-4px);
+.header nav a:hover,
+.header__menu a:hover,
+header-component a[href]:hover,
+[class*="header"] nav a:hover {
+  color: var(--duab-gold) !important;
 }
 
-.wellness-benefits__icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--wellness-navy);
-  border-radius: 50%;
-  color: var(--wellness-gold);
+/* Header icons (search, cart, account) */
+.header svg,
+header-component svg,
+.header__icon svg {
+  color: var(--duab-gold) !important;
+  stroke: var(--duab-gold) !important;
 }
 
-.wellness-benefits__icon svg {
-  width: 28px;
-  height: 28px;
-  fill: currentColor;
-}
-
-.wellness-benefits__title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--wellness-navy);
-  margin-bottom: 12px;
-  font-family: var(--wellness-font-heading);
-}
-
-.wellness-benefits__text {
-  font-size: 15px;
-  color: var(--wellness-grey-500);
-  line-height: 1.7;
-  margin: 0;
+/* Cart count bubble */
+.cart-count-bubble,
+[class*="cart-bubble"],
+[class*="cart-count"] {
+  background-color: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+  font-weight: 700 !important;
 }
 
 /* ============================================
-   TESTIMONIALS SECTION
+   HERO SECTION
    ============================================ */
-.wellness-testimonials {
-  padding: 80px 0;
-  background: var(--wellness-white);
-}
-
-.wellness-testimonials__heading {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.wellness-testimonials__heading h2 {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--wellness-navy);
-  margin: 0 0 12px;
-}
-
-.wellness-testimonials__heading p {
-  font-size: 16px;
-  color: var(--wellness-grey-500);
-  margin: 0;
-}
-
-.wellness-testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.wellness-testimonials__card {
-  padding: 32px;
-  background: var(--wellness-grey-100);
-  border-radius: var(--wellness-radius-lg);
-  border: 1px solid var(--wellness-grey-200);
-  transition: var(--wellness-transition);
+.hero-section,
+[class*="hero"],
+.banner,
+[class*="banner"] {
   position: relative;
+  min-height: 100vh;
 }
 
-.wellness-testimonials__card:hover {
-  box-shadow: var(--wellness-shadow-md);
-  border-color: var(--wellness-gold-muted);
+/* Dark overlay for hero */
+.hero-overlay-dark {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(26, 31, 54, 0.7) 100%) !important;
 }
 
-.wellness-testimonials__stars {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 16px;
+.hero-title {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 64px !important;
+  font-weight: 700 !important;
+  color: var(--duab-white) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 20px !important;
 }
 
-.wellness-testimonials__star {
-  color: var(--wellness-gold);
-  font-size: 18px;
-  line-height: 1;
+.hero-subtitle {
+  font-family: var(--duab-font-body) !important;
+  font-size: 18px !important;
+  color: var(--duab-grey) !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  max-width: 560px !important;
 }
 
-.wellness-testimonials__quote {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--wellness-grey-700);
-  margin: 0 0 20px;
-  font-style: italic;
+.hero-cta-primary {
+  display: inline-block;
+  background: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 16px 36px !important;
+  border-radius: var(--duab-radius) !important;
+  border: 2px solid var(--duab-gold) !important;
+  font-size: 15px !important;
+  transition: var(--duab-transition) !important;
+  text-decoration: none !important;
 }
 
-.wellness-testimonials__author {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--wellness-navy);
+.hero-cta-primary:hover {
+  background: var(--duab-gold-dark) !important;
+  border-color: var(--duab-gold-dark) !important;
+  box-shadow: 0 0 20px var(--duab-gold-glow) !important;
 }
 
-.wellness-testimonials__verified {
-  font-size: 12px;
-  color: var(--wellness-grey-500);
-  margin-top: 2px;
+.hero-cta-secondary {
+  display: inline-block;
+  background: transparent !important;
+  color: var(--duab-white) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 16px 36px !important;
+  border-radius: var(--duab-radius) !important;
+  border: 2px solid var(--duab-gold) !important;
+  font-size: 15px !important;
+  transition: var(--duab-transition) !important;
+  text-decoration: none !important;
+  margin-left: 16px;
+}
+
+.hero-cta-secondary:hover {
+  background: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+  box-shadow: 0 0 20px var(--duab-gold-glow) !important;
 }
 
 /* ============================================
-   TRUST BADGES SECTION
+   PRODUCT CARDS
+   ============================================ */
+.product-card,
+.card,
+[class*="product-card"],
+.collection-product-card {
+  background-color: var(--duab-navy) !important;
+  border: 1px solid var(--duab-navy-border) !important;
+  border-radius: var(--duab-radius) !important;
+  overflow: hidden;
+  transition: var(--duab-transition) !important;
+}
+
+.product-card:hover,
+.card:hover,
+[class*="product-card"]:hover,
+.collection-product-card:hover {
+  border-color: var(--duab-gold) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Product card title */
+.product-card__title,
+.card__heading,
+[class*="product-card"] [class*="title"] {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 16px !important;
+  color: var(--duab-white) !important;
+}
+
+/* Product card price */
+.product-card__price,
+.price,
+[class*="price"] {
+  font-family: var(--duab-font-body) !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  color: var(--duab-gold) !important;
+}
+
+/* Badges */
+.badge,
+[class*="badge"] {
+  background-color: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  border-radius: var(--duab-radius) !important;
+}
+
+/* ============================================
+   PRODUCT DETAIL PAGE
+   ============================================ */
+.product__title,
+.product__title h1 {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 36px !important;
+  color: var(--duab-white) !important;
+  font-weight: 700 !important;
+}
+
+.product__price {
+  font-family: var(--duab-font-body) !important;
+  font-size: 28px !important;
+  color: var(--duab-gold) !important;
+  font-weight: 700 !important;
+}
+
+/* Gold divider after price */
+.product__price-wrapper::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--duab-gold-subtle);
+  margin-top: 20px;
+}
+
+/* Product description */
+.product__description,
+.product__description p {
+  font-family: var(--duab-font-body) !important;
+  font-size: 15px !important;
+  color: var(--duab-grey) !important;
+  line-height: 1.8 !important;
+}
+
+/* Quantity input */
+.quantity__input,
+input[name="quantity"],
+.quantity {
+  background-color: var(--duab-navy) !important;
+  border-color: var(--duab-gold) !important;
+  color: var(--duab-white) !important;
+  border-radius: var(--duab-radius) !important;
+}
+
+/* Product page Add to Cart */
+.product-form__submit,
+.product-form button[type="submit"] {
+  width: 100% !important;
+  background: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 18px !important;
+  border-radius: var(--duab-radius) !important;
+  border: none !important;
+  transition: var(--duab-transition) !important;
+}
+
+.product-form__submit:hover,
+.product-form button[type="submit"]:hover {
+  background: var(--duab-gold-dark) !important;
+  box-shadow: 0 0 20px var(--duab-gold-glow) !important;
+}
+
+/* ============================================
+   TRUST BADGES (Product Page & Homepage)
    ============================================ */
 .wellness-trust {
   padding: 60px 0;
-  background: var(--wellness-navy);
-}
-
-.wellness-trust__heading {
-  text-align: center;
-  margin-bottom: 40px;
+  background: var(--duab-navy) !important;
+  border-top: 1px solid var(--duab-gold-subtle);
+  border-bottom: 1px solid var(--duab-gold-subtle);
 }
 
 .wellness-trust__heading h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--wellness-white);
-  margin: 0;
+  color: var(--duab-white) !important;
 }
 
 .wellness-trust__grid {
@@ -224,16 +371,17 @@ body {
 .wellness-trust__badge {
   text-align: center;
   padding: 32px 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: var(--wellness-radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--wellness-transition);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--duab-radius);
+  border: 1px solid var(--duab-navy-border);
+  transition: var(--duab-transition);
 }
 
 .wellness-trust__badge:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--wellness-gold-muted);
+  border-color: var(--duab-gold);
+  background: rgba(201, 168, 76, 0.05);
   transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 .wellness-trust__badge-icon {
@@ -243,7 +391,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--wellness-gold);
+  color: var(--duab-gold);
 }
 
 .wellness-trust__badge-icon svg {
@@ -255,22 +403,174 @@ body {
 }
 
 .wellness-trust__badge-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--wellness-white);
+  color: var(--duab-white);
   margin-bottom: 8px;
-  font-family: var(--wellness-font-heading);
+  font-family: var(--duab-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .wellness-trust__badge-text {
   font-size: 13px;
-  color: var(--wellness-grey-200);
+  color: var(--duab-grey);
   line-height: 1.6;
   margin: 0;
 }
 
 /* ============================================
-   PRODUCT FAQ SECTION
+   BENEFITS SECTION
+   ============================================ */
+.wellness-benefits {
+  padding: 80px 0;
+  background: var(--duab-navy) !important;
+  border-top: 1px solid var(--duab-gold-subtle);
+}
+
+.wellness-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wellness-benefits__item {
+  text-align: center;
+  padding: 40px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--duab-radius);
+  border: 1px solid var(--duab-navy-border);
+  transition: var(--duab-transition);
+}
+
+.wellness-benefits__item:hover {
+  border-color: var(--duab-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.wellness-benefits__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--duab-gold-faint);
+  border-radius: 50%;
+  color: var(--duab-gold);
+  border: 1px solid var(--duab-gold-subtle);
+}
+
+.wellness-benefits__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.wellness-benefits__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--duab-white);
+  margin-bottom: 12px;
+  font-family: var(--duab-font-heading);
+}
+
+.wellness-benefits__text {
+  font-size: 15px;
+  color: var(--duab-grey);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.wellness-testimonials {
+  padding: 80px 0;
+  background: var(--duab-black) !important;
+  border-top: 1px solid var(--duab-gold-subtle);
+}
+
+.wellness-testimonials__heading h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--duab-white) !important;
+  font-family: var(--duab-font-heading);
+  margin: 0 0 12px;
+}
+
+.wellness-testimonials__heading p {
+  font-size: 16px;
+  color: var(--duab-grey);
+  margin: 0;
+}
+
+.wellness-testimonials__heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.wellness-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wellness-testimonials__card {
+  padding: 32px;
+  background: var(--duab-navy);
+  border-radius: var(--duab-radius);
+  border: 1px solid var(--duab-navy-border);
+  transition: var(--duab-transition);
+}
+
+.wellness-testimonials__card:hover {
+  border-color: var(--duab-gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.wellness-testimonials__stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+
+.wellness-testimonials__star {
+  color: var(--duab-gold);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.wellness-testimonials__quote {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--duab-grey);
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.wellness-testimonials__author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--duab-white);
+  font-family: var(--duab-font-heading);
+}
+
+.wellness-testimonials__verified {
+  font-size: 12px;
+  color: var(--duab-gold);
+  margin-top: 4px;
+}
+
+/* ============================================
+   FAQ SECTION
    ============================================ */
 .wellness-faq {
   padding: 60px 0;
@@ -278,29 +578,20 @@ body {
   margin: 0 auto;
 }
 
-.wellness-faq__heading {
-  margin-bottom: 36px;
-}
-
 .wellness-faq__heading h2 {
   font-size: 28px;
   font-weight: 700;
-  color: var(--wellness-navy);
-  margin: 0;
-}
-
-.wellness-faq__list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  color: var(--duab-white);
+  font-family: var(--duab-font-heading);
+  margin: 0 0 36px;
 }
 
 .wellness-faq__item {
-  border-bottom: 1px solid var(--wellness-grey-200);
+  border-bottom: 1px solid var(--duab-navy-border);
 }
 
 .wellness-faq__item:first-child {
-  border-top: 1px solid var(--wellness-grey-200);
+  border-top: 1px solid var(--duab-navy-border);
 }
 
 .wellness-faq__question {
@@ -311,17 +602,17 @@ body {
   padding: 20px 0;
   font-size: 16px;
   font-weight: 600;
-  color: var(--wellness-navy);
+  color: var(--duab-white);
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-family: var(--wellness-font-body);
-  transition: color 0.2s ease;
+  font-family: var(--duab-font-body);
+  transition: color 0.3s ease;
 }
 
 .wellness-faq__question:hover {
-  color: var(--wellness-gold);
+  color: var(--duab-gold);
 }
 
 .wellness-faq__question svg {
@@ -329,7 +620,7 @@ body {
   height: 20px;
   flex-shrink: 0;
   transition: transform 0.3s ease;
-  color: var(--wellness-grey-500);
+  color: var(--duab-gold);
 }
 
 .wellness-faq__item[open] .wellness-faq__question svg {
@@ -339,110 +630,204 @@ body {
 .wellness-faq__answer {
   padding: 0 0 20px;
   font-size: 15px;
-  line-height: 1.7;
-  color: var(--wellness-grey-700);
+  line-height: 1.8;
+  color: var(--duab-grey);
 }
 
 /* ============================================
-   STAR RATINGS
+   FOOTER
    ============================================ */
-.wellness-stars {
-  display: inline-flex;
-  gap: 2px;
-  color: var(--wellness-gold);
+footer,
+.footer,
+[class*="footer"] {
+  background-color: var(--duab-near-black) !important;
+  border-top: 1px solid var(--duab-gold) !important;
+  color: var(--duab-grey) !important;
 }
 
-.wellness-stars svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
+footer h2, footer h3, footer h4,
+.footer h2, .footer h3, .footer h4 {
+  color: var(--duab-gold) !important;
+  font-family: var(--duab-font-heading) !important;
 }
 
-.wellness-stars--large svg {
-  width: 20px;
-  height: 20px;
+footer a,
+.footer a {
+  color: var(--duab-white) !important;
+  transition: color 0.3s ease !important;
 }
 
-.wellness-rating-text {
-  font-size: 14px;
-  color: var(--wellness-grey-500);
-  margin-left: 8px;
+footer a:hover,
+.footer a:hover {
+  color: var(--duab-gold) !important;
 }
 
-/* ============================================
-   NEWSLETTER SECTION OVERRIDES
-   ============================================ */
-.wellness-newsletter {
-  text-align: center;
-  padding: 60px 24px;
-}
-
-.wellness-newsletter__small {
-  font-size: 13px;
-  color: var(--wellness-grey-500);
-  margin-top: 12px;
+/* Footer bottom bar */
+.footer__bottom,
+[class*="footer-utilities"] {
+  background-color: var(--duab-black) !important;
+  color: var(--duab-grey-dark) !important;
+  border-top: 1px solid var(--duab-navy-border) !important;
 }
 
 /* ============================================
-   ABOUT PAGE CUSTOM STYLES
+   ABOUT PAGE
    ============================================ */
 .wellness-about__values {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 28px;
   margin-top: 40px;
 }
 
 .wellness-about__value-card {
-  padding: 32px;
-  background: var(--wellness-grey-100);
-  border-radius: var(--wellness-radius-lg);
+  padding: 36px;
+  background: var(--duab-navy);
+  border-radius: var(--duab-radius);
   text-align: center;
-  border: 1px solid var(--wellness-grey-200);
+  border: 1px solid var(--duab-navy-border);
+  transition: var(--duab-transition);
+}
+
+.wellness-about__value-card:hover {
+  border-color: var(--duab-gold);
+  transform: translateY(-2px);
 }
 
 .wellness-about__value-card h3 {
   font-size: 18px;
   font-weight: 700;
-  color: var(--wellness-navy);
+  color: var(--duab-white) !important;
   margin: 16px 0 8px;
+  font-family: var(--duab-font-heading);
 }
 
 .wellness-about__value-card p {
   font-size: 14px;
-  color: var(--wellness-grey-500);
+  color: var(--duab-grey);
   line-height: 1.7;
   margin: 0;
 }
 
 /* ============================================
-   HERO SECTION ENHANCEMENTS
+   SECTION DIVIDERS & SPACING
    ============================================ */
-.wellness-hero-overlay {
-  position: relative;
+.shopify-section + .shopify-section {
+  border-top: 1px solid var(--duab-gold-subtle);
 }
 
-.wellness-hero-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(10, 22, 40, 0.5) 100%);
-  z-index: 1;
-  pointer-events: none;
+.shopify-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--duab-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--duab-navy-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--duab-gold);
+}
+
+/* ============================================
+   CART DRAWER
+   ============================================ */
+.cart-drawer,
+[class*="cart-drawer"] {
+  background-color: var(--duab-navy) !important;
+  color: var(--duab-white) !important;
+}
+
+.cart-drawer button,
+[class*="cart-drawer"] button {
+  background-color: var(--duab-gold) !important;
+  color: var(--duab-black) !important;
+}
+
+/* ============================================
+   SEARCH MODAL
+   ============================================ */
+.search-modal,
+[class*="search-modal"],
+[class*="predictive-search"] {
+  background-color: var(--duab-black) !important;
+  color: var(--duab-white) !important;
+}
+
+/* ============================================
+   404 PAGE
+   ============================================ */
+.template-404 h1 {
+  font-family: var(--duab-font-heading) !important;
+  font-size: 80px !important;
+  color: var(--duab-gold) !important;
+}
+
+.template-404 p {
+  color: var(--duab-white) !important;
+  font-family: var(--duab-font-body) !important;
+}
+
+/* ============================================
+   MOBILE MENU OVERLAY
+   ============================================ */
+.menu-drawer,
+[class*="header-drawer"],
+[class*="menu-drawer"] {
+  background-color: var(--duab-black) !important;
+}
+
+.menu-drawer a,
+[class*="header-drawer"] a,
+[class*="menu-drawer"] a {
+  color: var(--duab-white) !important;
+  font-size: 18px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+.menu-drawer a:hover,
+[class*="header-drawer"] a:hover {
+  color: var(--duab-gold) !important;
+}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.wellness-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wellness-gold-text {
+  color: var(--duab-gold) !important;
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
    ============================================ */
 @media (max-width: 991px) {
   .wellness-benefits__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
 
   .wellness-testimonials__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
 
   .wellness-trust__grid {
@@ -453,6 +838,14 @@ body {
   .wellness-about__values {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .hero-title {
+    font-size: 42px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 16px !important;
+  }
 }
 
 @media (max-width: 599px) {
@@ -460,7 +853,7 @@ body {
   .wellness-testimonials__grid,
   .wellness-about__values {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   .wellness-trust__grid {
@@ -468,10 +861,7 @@ body {
     gap: 12px;
   }
 
-  .wellness-benefits {
-    padding: 48px 0;
-  }
-
+  .wellness-benefits,
   .wellness-testimonials {
     padding: 48px 0;
   }
@@ -484,12 +874,33 @@ body {
     padding: 40px 16px;
   }
 
-  .wellness-benefits__item {
-    padding: 28px 20px;
+  .shopify-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
-  .wellness-testimonials__card {
-    padding: 24px;
+  .hero-title {
+    font-size: 36px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 15px !important;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    display: block !important;
+    width: 100% !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .product__title h1 {
+    font-size: 28px !important;
+  }
+
+  .product__price {
+    font-size: 22px !important;
   }
 
   .wellness-trust__badge {
@@ -497,74 +908,14 @@ body {
   }
 
   .wellness-trust__badge-title {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .wellness-trust__badge-text {
     font-size: 12px;
   }
 
-  .wellness-testimonials__heading h2,
-  .wellness-faq__heading h2 {
-    font-size: 24px;
+  .template-404 h1 {
+    font-size: 48px !important;
   }
-
-  .wellness-trust__heading h2 {
-    font-size: 22px;
-  }
-}
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-.wellness-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.wellness-section-heading {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.wellness-section-heading h2 {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--wellness-navy);
-  margin: 0 0 12px;
-}
-
-.wellness-section-heading p {
-  font-size: 16px;
-  color: var(--wellness-grey-500);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Gold text accent */
-.wellness-gold-text {
-  color: var(--wellness-gold);
-}
-
-/* Discreet note styling */
-.wellness-discreet-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--wellness-grey-500);
-  padding: 8px 16px;
-  background: var(--wellness-grey-100);
-  border-radius: 100px;
-  margin-top: 12px;
-}
-
-.wellness-discreet-note svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
 }
