@@ -1,0 +1,44 @@
+{{ 'custom-wellness.css' | asset_url | stylesheet_tag }}
+
+<section class="wellness-brand-story shopify-section" aria-label="Brand Story">
+  <div class="page-width">
+    <div class="wellness-brand-story__grid">
+      <div class="wellness-brand-story__content">
+        <h2 class="wellness-brand-story__heading">{{ section.settings.heading | escape }}</h2>
+        <div class="wellness-brand-story__text">
+          {{ section.settings.text }}
+        </div>
+      </div>
+      <div class="wellness-brand-story__image-wrapper">
+        {% comment %} Prompt: two confident men in business casual attire having a conversation, modern office, warm lighting, diverse, professional {% endcomment %}
+        <img src="https://source.unsplash.com/800x600/?men,professional,confident,modern" alt="Brand Story" class="wellness-brand-story__image" width="800" height="600" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Story",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "default": "<p>We founded this brand with a single mission: to provide men with premium, science-backed solutions that actually deliver results. Built for the modern man who values performance and demands quality.</p>",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Story",
+      "category": "Wellness"
+    }
+  ]
+}
+{% endschema %}

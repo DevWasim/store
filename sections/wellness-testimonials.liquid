@@ -1,12 +1,16 @@
-<section id="wellness-testimonials" class="wellness-testimonials" aria-label="Customer Testimonials">
-  <div class="wellness-testimonials__heading">
+<section id="wellness-testimonials" class="wellness-testimonials" aria-label="Customer Testimonials" style="position: relative; overflow: hidden;">
+  {% comment %}
+    Prompt: dark carbon fiber texture, luxury dark background, subtle pattern, deep charcoal
+  {% endcomment %}
+  <img src="https://source.unsplash.com/1920x600/?dark,texture,carbon,luxury" alt="Texture Background" class="wellness-testimonials__bg" loading="lazy">
+  <div class="wellness-testimonials__heading" style="position: relative; z-index: 1;">
     <h2>{{ section.settings.heading }}</h2>
     {%- if section.settings.subheading != blank -%}
       <p>{{ section.settings.subheading }}</p>
     {%- endif -%}
   </div>
 
-  <div class="wellness-testimonials__grid">
+  <div class="wellness-testimonials__grid" style="position: relative; z-index: 1;">
     {%- for block in section.blocks -%}
       <div class="wellness-testimonials__card" {{ block.shopify_attributes }}>
         <div class="wellness-testimonials__stars" aria-label="{{ block.settings.rating }} out of 5 stars">

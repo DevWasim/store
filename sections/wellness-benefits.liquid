@@ -4,13 +4,17 @@
       <div class="wellness-benefits__item" {{ block.shopify_attributes }}>
         <div class="wellness-benefits__icon">
           {%- if block.settings.icon == 'fast' -%}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            {% comment %} Prompt: glowing green lightning bolt icon on dark background, minimalist flat design {% endcomment %}
+            <img src="https://source.unsplash.com/80x80/?lightning,energy,green" alt="Fast Acting" class="wellness-benefits__img" width="80" height="80" loading="lazy">
           {%- elsif block.settings.icon == 'discreet' -%}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v2h20V6a2 2 0 0 0-2-2zM2 10v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8H2zm6 6H5v-2h3v2z"/></svg>
+            {% comment %} Prompt: clean minimal dark box with ribbon, privacy concept, product packaging illustration {% endcomment %}
+            <img src="https://source.unsplash.com/80x80/?package,discreet,minimal" alt="Discreet Packaging" class="wellness-benefits__img" width="80" height="80" loading="lazy">
           {%- elsif block.settings.icon == 'science' -%}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 2v6.5L4.1 18.4A2 2 0 0 0 5.8 21h12.4a2 2 0 0 0 1.7-2.6L15 8.5V2H9zm2 2h2v5.2l1.5 3H9.5L11 9.2V4z"/></svg>
+            {% comment %} Prompt: elegant clock face glowing green on dark background, time concept {% endcomment %}
+            <img src="https://source.unsplash.com/80x80/?clock,timer,green" alt="6 Hour Duration" class="wellness-benefits__img" width="80" height="80" loading="lazy">
           {%- else -%}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            {% comment %} Prompt: elegant clock face glowing green on dark background, time concept {% endcomment %}
+            <img src="https://source.unsplash.com/80x80/?clock,timer,green" alt="6 Hour Duration" class="wellness-benefits__img" width="80" height="80" loading="lazy">
           {%- endif -%}
         </div>
         <h3 class="wellness-benefits__title">{{ block.settings.title }}</h3>

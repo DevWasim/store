@@ -327,7 +327,10 @@
   {{ media_slot_2 }}
 
   {% if media_count == 0 %}
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__media' }}
+    {% comment %}
+      Prompt: confident athletic man in his 30s standing in dramatic studio lighting, dark teal background, looking straight at camera with strong jaw, wearing simple dark fitted shirt, cinematic photography, high contrast, professional commercial shoot
+    {% endcomment %}
+    <img src="https://source.unsplash.com/1920x1080/?confident,man,athletic,studio" alt="Hero Background" class="hero__media" width="1920" height="1080" loading="eager">
   {%- endif -%}
 {% endcapture %}
 
@@ -359,7 +362,10 @@
     }}
   {% endif %}
   {% if media_count == 0 %}
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__media' }}
+    {% comment %}
+      Prompt: confident athletic man in his 30s standing in dramatic studio lighting, dark teal background, looking straight at camera with strong jaw, wearing simple dark fitted shirt, cinematic photography, high contrast, professional commercial shoot
+    {% endcomment %}
+    <img src="https://source.unsplash.com/1920x1080/?confident,man,athletic,studio" alt="Hero Background" class="hero__media" width="1920" height="1080" loading="lazy">
   {% endif %}
 {% endcapture %}
 
@@ -443,7 +449,10 @@
             }}
         {% endif %}
         {% if media_count == 0 %}
-          {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__media' }}
+          {% comment %}
+            Prompt: confident athletic man in his 30s standing in dramatic studio lighting, dark teal background, looking straight at camera with strong jaw, wearing simple dark fitted shirt, cinematic photography, high contrast, professional commercial shoot
+          {% endcomment %}
+          <img src="https://source.unsplash.com/1920x1080/?confident,man,athletic,studio" alt="Hero Background" class="hero__media" width="1920" height="1080" loading="lazy">
         {% endif %}
       {% endif %}
     {% endif %}

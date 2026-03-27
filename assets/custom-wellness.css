@@ -1,24 +1,24 @@
 /* ============================================
    DUAB — Premium Emerald Performance Theme
-   Black #0A0A0A | Emerald #00C896 | Dark Charcoal #111111
+   Dark Blue-Grey #1A1A2E | Emerald #10B981 | Navy #0F3460
    ============================================ */
 
 /* --- Core Design Tokens --- */
 :root {
-  --duab-black: #0A0A0A;
-  --duab-charcoal: #111111;
-  --duab-charcoal-dark: #0D0D0D;
-  --duab-border: #1E1E1E;
-  --duab-border-subtle: #1A1A1A;
-  --duab-emerald: #00C896;
-  --duab-emerald-hover: #00A87E;
-  --duab-emerald-glow: rgba(0, 200, 150, 0.12);
-  --duab-emerald-divider: rgba(0, 200, 150, 0.15);
+  --duab-black: #1A1A2E;
+  --duab-charcoal: #16213E;
+  --duab-charcoal-dark: #0F3460;
+  --duab-border: rgba(16, 185, 129, 0.15);
+  --duab-border-subtle: rgba(16, 185, 129, 0.12);
+  --duab-emerald: #10B981;
+  --duab-emerald-hover: #059669;
+  --duab-emerald-glow: rgba(16, 185, 129, 0.12);
+  --duab-emerald-divider: rgba(16, 185, 129, 0.12);
   --duab-white: #FFFFFF;
-  --duab-grey: #9CA3AF;
+  --duab-grey: #94A3B8;
   --duab-font-heading: 'Syne', sans-serif;
   --duab-font-body: 'DM Sans', sans-serif;
-  --duab-radius-card: 10px;
+  --duab-radius-card: 12px;
   --duab-radius-btn: 6px;
   --duab-radius-btn-large: 8px;
   --duab-transition: all 0.25s ease;
@@ -141,12 +141,12 @@ header,
 .header,
 header-component,
 .header-section {
-  background-color: var(--duab-black) !important;
+  background-color: var(--duab-charcoal) !important;
   border-bottom: 1px solid var(--duab-border-subtle) !important;
 }
 
 header-component[sticky] {
-  background-color: var(--duab-black) !important;
+  background-color: var(--duab-charcoal) !important;
   border-bottom: 1px solid var(--duab-border-subtle) !important;
 }
 
@@ -210,13 +210,14 @@ header-component svg,
   justify-content: center;
 }
 
-/* Subtle glowing radial gradient */
-.hero-overlay-dark {
-  background: radial-gradient(ellipse at 50% 60%, rgba(0, 200, 150, 0.08) 0%, transparent 70%) !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Subtle dark teal overlay gradient */
+.hero__media-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26, 33, 62, 0.75), rgba(15, 52, 96, 0.85));
+  z-index: 10;
+  pointer-events: none;
 }
 
 .hero-label {
@@ -448,10 +449,10 @@ input[name="quantity"],
    BENEFITS & FAQ & TESTIMONIALS
    ============================================ */
 .wellness-benefits {
-  background: var(--duab-charcoal-dark) !important;
+  background: var(--duab-charcoal) !important;
 }
 .wellness-benefits__item {
-  background: var(--duab-charcoal) !important;
+  background: var(--duab-charcoal-dark) !important;
   border: 1px solid var(--duab-border);
   border-radius: var(--duab-radius-card);
 }
@@ -460,8 +461,11 @@ input[name="quantity"],
   transform: translateY(-6px);
   box-shadow: 0 12px 40px var(--duab-emerald-glow) !important;
 }
-.wellness-benefits__icon {
-  color: var(--duab-emerald);
+.wellness-benefits__img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: 1px solid var(--duab-border);
 }
 
 .wellness-faq__item {
@@ -482,10 +486,21 @@ input[name="quantity"],
 }
 
 .wellness-testimonials {
-  background: var(--duab-black) !important;
+  background: var(--duab-charcoal) !important;
+}
+.wellness-testimonials__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
 }
 .wellness-testimonials__card {
-  background: var(--duab-charcoal);
+  background: var(--duab-charcoal-dark);
   border: 1px solid var(--duab-border);
   border-radius: var(--duab-radius-card);
 }
@@ -505,9 +520,25 @@ input[name="quantity"],
 footer,
 .footer,
 [class*="footer"] {
-  background-color: var(--duab-charcoal-dark) !important;
+  background-color: var(--duab-charcoal) !important;
   border-top: 1px solid var(--duab-border-subtle) !important;
   color: var(--duab-grey) !important;
+}
+
+.footer__bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+.footer-content {
+  position: relative;
+  z-index: 1;
 }
 
 footer h2, footer h3, footer h4,
@@ -559,7 +590,7 @@ footer a:hover,
 }
 
 .shopify-section:nth-child(even) {
-  background-color: var(--duab-charcoal-dark);
+  background-color: var(--duab-charcoal);
 }
 .shopify-section:nth-child(odd) {
   background-color: var(--duab-black);
